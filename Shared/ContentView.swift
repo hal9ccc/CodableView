@@ -15,7 +15,7 @@ struct ContentView: View {
 
     // screenManager provides us with screen data and updates
     //
-    @ObservedObject var screenManager : ScreenManager
+    @ObservedObject var cvCache : CVCache
 
 
 //    @FetchRequest(
@@ -26,18 +26,18 @@ struct ContentView: View {
     
     var body: some View {
         //let i = screenManager.screens[screenId]
-        let vm = screenManager.screenVMs[screenId]
+        let vm = cvCache.viewModels[screenId]
         //let a = i?.items
         //let _: () = print(screenManager.screens)
 
         
-        let _: () = print("screenManager.screenVMs: \(screenManager.screenVMs)")
+        let _: () = print("screenManager.screenVMs: \(cvCache.viewModels)")
         let _: () = print("building screen \(screenId) using vm \(String(describing: vm))")
         
         NavigationView {
 
             if vm != nil {
-                TemplateView(vm: vm!)
+                CVView(vm: vm!)
             }
             else {
                 ProgressView()
@@ -99,7 +99,7 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(screenId: "SwiftUITest", screenManager: ScreenManager())
+        ContentView(screenId: "SwiftUITest", cvCache: CVCache())
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

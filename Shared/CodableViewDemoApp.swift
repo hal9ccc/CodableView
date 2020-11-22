@@ -8,7 +8,7 @@
 import SwiftUI
 import Firebase
 
-let screenManager = ScreenManager()
+let screenManager = CVCache()
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
@@ -28,7 +28,7 @@ struct CodableViewDemoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(screenId: "SwiftUITest", screenManager: screenManager)
+            ContentView(screenId: "SwiftUITest", cvCache: screenManager)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

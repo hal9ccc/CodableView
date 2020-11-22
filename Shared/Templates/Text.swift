@@ -107,7 +107,6 @@ struct TextView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             TextViewDemo()
-            TextViewDemo()
         }
     }
 }

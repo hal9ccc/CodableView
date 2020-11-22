@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3FBD58E4180CE3E63B6E8284 /* Pods_CodableViewDemo__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB1DF6D413AD2CB60159941 /* Pods_CodableViewDemo__macOS_.framework */; };
-		4D7B5E2FB3655BB5039462CD /* Pods_CodableViewDemo__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4BF43042CD793AD170CC0C /* Pods_CodableViewDemo__iOS_.framework */; };
 		4E3ACD4B2568487E00767BA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD492568487E00767BA6 /* Constants.swift */; };
 		4E3ACD4C2568487E00767BA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD492568487E00767BA6 /* Constants.swift */; };
 		4E3ACD4D2568487E00767BA6 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD4A2568487E00767BA6 /* ImageDownloader.swift */; };
@@ -35,16 +33,16 @@
 		4E3ACD7A256848B300767BA6 /* TableScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD71256848B300767BA6 /* TableScreenView.swift */; };
 		4E3ACD7B256848B300767BA6 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD72256848B300767BA6 /* DebugView.swift */; };
 		4E3ACD7C256848B300767BA6 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD72256848B300767BA6 /* DebugView.swift */; };
-		4E3ACD7D256848B300767BA6 /* TemplateScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD73256848B300767BA6 /* TemplateScreenView.swift */; };
-		4E3ACD7E256848B300767BA6 /* TemplateScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD73256848B300767BA6 /* TemplateScreenView.swift */; };
+		4E3ACD7D256848B300767BA6 /* CVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD73256848B300767BA6 /* CVView.swift */; };
+		4E3ACD7E256848B300767BA6 /* CVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD73256848B300767BA6 /* CVView.swift */; };
 		4E3ACD81256848B300767BA6 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD75256848B300767BA6 /* URLImage.swift */; };
 		4E3ACD82256848B300767BA6 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD75256848B300767BA6 /* URLImage.swift */; };
-		4E3ACD8E256848BA00767BA6 /* ScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD89256848BA00767BA6 /* ScreenManager.swift */; };
-		4E3ACD8F256848BA00767BA6 /* ScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD89256848BA00767BA6 /* ScreenManager.swift */; };
+		4E3ACD8E256848BA00767BA6 /* CVCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD89256848BA00767BA6 /* CVCache.swift */; };
+		4E3ACD8F256848BA00767BA6 /* CVCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD89256848BA00767BA6 /* CVCache.swift */; };
 		4E3ACD90256848BA00767BA6 /* TableScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD8A256848BA00767BA6 /* TableScreenViewModel.swift */; };
 		4E3ACD91256848BA00767BA6 /* TableScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD8A256848BA00767BA6 /* TableScreenViewModel.swift */; };
-		4E3ACD92256848BA00767BA6 /* TemplateScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD8B256848BA00767BA6 /* TemplateScreenViewModel.swift */; };
-		4E3ACD93256848BA00767BA6 /* TemplateScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD8B256848BA00767BA6 /* TemplateScreenViewModel.swift */; };
+		4E3ACD92256848BA00767BA6 /* CVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD8B256848BA00767BA6 /* CVViewModel.swift */; };
+		4E3ACD93256848BA00767BA6 /* CVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD8B256848BA00767BA6 /* CVViewModel.swift */; };
 		4E3ACD9C256848BF00767BA6 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD97256848BF00767BA6 /* Chart.swift */; };
 		4E3ACD9D256848BF00767BA6 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD97256848BF00767BA6 /* Chart.swift */; };
 		4E3ACD9E256848BF00767BA6 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD98256848BF00767BA6 /* TextField.swift */; };
@@ -72,7 +70,6 @@
 
 /* Begin PBXFileReference section */
 		201A2851694B6D2F90673CF7 /* Pods-CodableViewDemo (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodableViewDemo (macOS).release.xcconfig"; path = "Target Support Files/Pods-CodableViewDemo (macOS)/Pods-CodableViewDemo (macOS).release.xcconfig"; sourceTree = "<group>"; };
-		3CB1DF6D413AD2CB60159941 /* Pods_CodableViewDemo__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodableViewDemo__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		473E00CEFB7AC4E7A5514366 /* Pods-CodableViewDemo (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodableViewDemo (macOS).debug.xcconfig"; path = "Target Support Files/Pods-CodableViewDemo (macOS)/Pods-CodableViewDemo (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		4E3ACD492568487E00767BA6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4E3ACD4A2568487E00767BA6 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
@@ -87,11 +84,11 @@
 		4E3ACD70256848B300767BA6 /* StaticView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticView.swift; sourceTree = "<group>"; };
 		4E3ACD71256848B300767BA6 /* TableScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableScreenView.swift; sourceTree = "<group>"; };
 		4E3ACD72256848B300767BA6 /* DebugView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
-		4E3ACD73256848B300767BA6 /* TemplateScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateScreenView.swift; sourceTree = "<group>"; };
+		4E3ACD73256848B300767BA6 /* CVView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVView.swift; sourceTree = "<group>"; };
 		4E3ACD75256848B300767BA6 /* URLImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
-		4E3ACD89256848BA00767BA6 /* ScreenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenManager.swift; sourceTree = "<group>"; };
+		4E3ACD89256848BA00767BA6 /* CVCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCache.swift; sourceTree = "<group>"; };
 		4E3ACD8A256848BA00767BA6 /* TableScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableScreenViewModel.swift; sourceTree = "<group>"; };
-		4E3ACD8B256848BA00767BA6 /* TemplateScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateScreenViewModel.swift; sourceTree = "<group>"; };
+		4E3ACD8B256848BA00767BA6 /* CVViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVViewModel.swift; sourceTree = "<group>"; };
 		4E3ACD97256848BF00767BA6 /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		4E3ACD98256848BF00767BA6 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		4E3ACD99256848BF00767BA6 /* RoundedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
@@ -110,7 +107,6 @@
 		4E6E76F525682039009F9892 /* CodableViewDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CodableViewDemo.entitlements; sourceTree = "<group>"; };
 		4E6E76FA256826F4009F9892 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6A51857829DB3BF7DF5F241C /* Pods-CodableViewDemo (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodableViewDemo (iOS).release.xcconfig"; path = "Target Support Files/Pods-CodableViewDemo (iOS)/Pods-CodableViewDemo (iOS).release.xcconfig"; sourceTree = "<group>"; };
-		9F4BF43042CD793AD170CC0C /* Pods_CodableViewDemo__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodableViewDemo__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB59A0728B71428AD4CD13D /* Pods-CodableViewDemo (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodableViewDemo (iOS).debug.xcconfig"; path = "Target Support Files/Pods-CodableViewDemo (iOS)/Pods-CodableViewDemo (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,7 +115,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D7B5E2FB3655BB5039462CD /* Pods_CodableViewDemo__iOS_.framework in Frameworks */,
 				4E4EC06A25682CC2003B08F3 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,7 +123,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FBD58E4180CE3E63B6E8284 /* Pods_CodableViewDemo__macOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +132,6 @@
 		070E4A408B38CF01E82773E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9F4BF43042CD793AD170CC0C /* Pods_CodableViewDemo__iOS_.framework */,
-				3CB1DF6D413AD2CB60159941 /* Pods_CodableViewDemo__macOS_.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -178,10 +170,10 @@
 		4E3ACD6F256848B300767BA6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4E3ACD73256848B300767BA6 /* CVView.swift */,
 				4E3ACD70256848B300767BA6 /* StaticView.swift */,
 				4E3ACD71256848B300767BA6 /* TableScreenView.swift */,
 				4E3ACD72256848B300767BA6 /* DebugView.swift */,
-				4E3ACD73256848B300767BA6 /* TemplateScreenView.swift */,
 				4E3ACD75256848B300767BA6 /* URLImage.swift */,
 			);
 			path = Views;
@@ -191,7 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				4E3ACD8A256848BA00767BA6 /* TableScreenViewModel.swift */,
-				4E3ACD8B256848BA00767BA6 /* TemplateScreenViewModel.swift */,
+				4E3ACD8B256848BA00767BA6 /* CVViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -231,7 +223,7 @@
 				4E3ACD6F256848B300767BA6 /* Views */,
 				4E3ACD96256848BF00767BA6 /* Templates */,
 				4E6E76CD25681FCF009F9892 /* CodableViewDemoApp.swift */,
-				4E3ACD89256848BA00767BA6 /* ScreenManager.swift */,
+				4E3ACD89256848BA00767BA6 /* CVCache.swift */,
 				4E6E76CE25681FCF009F9892 /* ContentView.swift */,
 				4E6E76CF25681FCF009F9892 /* Persistence.swift */,
 				4E6E76D025681FD1009F9892 /* Assets.xcassets */,
@@ -289,7 +281,7 @@
 				4E6E76D125681FD1009F9892 /* Sources */,
 				4E6E76D225681FD1009F9892 /* Frameworks */,
 				4E6E76D325681FD1009F9892 /* Resources */,
-				06BA56B731044E56E04C919C /* [CP] Embed Pods Frameworks */,
+				FDA018343DD67CA3174F230D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -311,7 +303,7 @@
 				4E6E76D925681FD1009F9892 /* Sources */,
 				4E6E76DA25681FD1009F9892 /* Frameworks */,
 				4E6E76DB25681FD1009F9892 /* Resources */,
-				745D69EFCBDE1D08D5B62732 /* [CP] Embed Pods Frameworks */,
+				6AE12A5F9152F398AC39F820 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -383,23 +375,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06BA56B731044E56E04C919C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CodableViewDemo (iOS)/Pods-CodableViewDemo (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CodableViewDemo (iOS)/Pods-CodableViewDemo (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CodableViewDemo (iOS)/Pods-CodableViewDemo (iOS)-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		34FB5ECA2AB334B2023710D6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -422,7 +397,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		745D69EFCBDE1D08D5B62732 /* [CP] Embed Pods Frameworks */ = {
+		6AE12A5F9152F398AC39F820 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -461,6 +436,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FDA018343DD67CA3174F230D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CodableViewDemo (iOS)/Pods-CodableViewDemo (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CodableViewDemo (iOS)/Pods-CodableViewDemo (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CodableViewDemo (iOS)/Pods-CodableViewDemo (iOS)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -468,7 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E3ACD92256848BA00767BA6 /* TemplateScreenViewModel.swift in Sources */,
+				4E3ACD92256848BA00767BA6 /* CVViewModel.swift in Sources */,
 				4E3ACD632568489400767BA6 /* CVButton.swift in Sources */,
 				4E3ACD4B2568487E00767BA6 /* Constants.swift in Sources */,
 				4E3ACD77256848B300767BA6 /* StaticView.swift in Sources */,
@@ -481,7 +473,7 @@
 				4E3ACDA2256848BF00767BA6 /* Text.swift in Sources */,
 				4E3ACD592568488A00767BA6 /* Dictionary+Extensions.swift in Sources */,
 				4E3ACD90256848BA00767BA6 /* TableScreenViewModel.swift in Sources */,
-				4E3ACD7D256848B300767BA6 /* TemplateScreenView.swift in Sources */,
+				4E3ACD7D256848B300767BA6 /* CVView.swift in Sources */,
 				4E3ACDA4256848BF00767BA6 /* GradientBox.swift in Sources */,
 				4E6E76E325681FD1009F9892 /* CodableViewDemoApp.swift in Sources */,
 				4E6E76E725681FD1009F9892 /* Persistence.swift in Sources */,
@@ -491,7 +483,7 @@
 				4E3ACD572568488A00767BA6 /* View+Extensions.swift in Sources */,
 				4E6E76E525681FD1009F9892 /* ContentView.swift in Sources */,
 				4E3ACDA0256848BF00767BA6 /* RoundedImage.swift in Sources */,
-				4E3ACD8E256848BA00767BA6 /* ScreenManager.swift in Sources */,
+				4E3ACD8E256848BA00767BA6 /* CVCache.swift in Sources */,
 				4E3ACD672568489400767BA6 /* Screen.swift in Sources */,
 				4E3ACD6B2568489400767BA6 /* Actions.swift in Sources */,
 				4E3ACD81256848B300767BA6 /* URLImage.swift in Sources */,
@@ -502,7 +494,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E3ACD93256848BA00767BA6 /* TemplateScreenViewModel.swift in Sources */,
+				4E3ACD93256848BA00767BA6 /* CVViewModel.swift in Sources */,
 				4E3ACD642568489400767BA6 /* CVButton.swift in Sources */,
 				4E3ACD4C2568487E00767BA6 /* Constants.swift in Sources */,
 				4E3ACD78256848B300767BA6 /* StaticView.swift in Sources */,
@@ -515,7 +507,7 @@
 				4E3ACDA3256848BF00767BA6 /* Text.swift in Sources */,
 				4E3ACD5A2568488A00767BA6 /* Dictionary+Extensions.swift in Sources */,
 				4E3ACD91256848BA00767BA6 /* TableScreenViewModel.swift in Sources */,
-				4E3ACD7E256848B300767BA6 /* TemplateScreenView.swift in Sources */,
+				4E3ACD7E256848B300767BA6 /* CVView.swift in Sources */,
 				4E3ACDA5256848BF00767BA6 /* GradientBox.swift in Sources */,
 				4E6E76E425681FD1009F9892 /* CodableViewDemoApp.swift in Sources */,
 				4E6E76E825681FD1009F9892 /* Persistence.swift in Sources */,
@@ -525,7 +517,7 @@
 				4E3ACD582568488A00767BA6 /* View+Extensions.swift in Sources */,
 				4E6E76E625681FD1009F9892 /* ContentView.swift in Sources */,
 				4E3ACDA1256848BF00767BA6 /* RoundedImage.swift in Sources */,
-				4E3ACD8F256848BA00767BA6 /* ScreenManager.swift in Sources */,
+				4E3ACD8F256848BA00767BA6 /* CVCache.swift in Sources */,
 				4E3ACD682568489400767BA6 /* Screen.swift in Sources */,
 				4E3ACD6C2568489400767BA6 /* Actions.swift in Sources */,
 				4E3ACD82256848B300767BA6 /* URLImage.swift in Sources */,
@@ -653,6 +645,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CodableViewDemo.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HDMQU4KW6N;
 				ENABLE_PREVIEWS = YES;
@@ -678,6 +671,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CodableViewDemo.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HDMQU4KW6N;
 				ENABLE_PREVIEWS = YES;

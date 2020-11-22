@@ -10,12 +10,12 @@ import SwiftUI
 func buildFrom(json: String, async: Bool = false) -> AnyView {
 
     let jsonData    = json.data(using: .utf8)!
-    let vm          = TemplateScreenViewModel()
+    let vm          = CVViewModel()
     
     do {
         let screen = try JSONDecoder().decode(Screen.self, from: jsonData)
         vm.load(screen: screen, async: async)
-        return TemplateView(vm:vm).toAnyView()
+        return CVView(vm:vm).toAnyView()
     }
     catch {
         print(error)
@@ -38,8 +38,8 @@ func buildFrom(json: String, async: Bool = false) -> AnyView {
  }
 
 
-struct TemplateView: View {
-    @ObservedObject var vm: TemplateScreenViewModel
+struct CVView: View {
+    @ObservedObject var vm: CVViewModel
 
     @Namespace var screenAnimation
     @Namespace var templateAnimation
@@ -66,12 +66,12 @@ struct TemplateView: View {
 
 class TemplateViewController: UIViewController {
 
-    @State private var screenVM: TemplateScreenViewModel = TemplateScreenViewModel()
+    @State private var screenVM: CVViewModel = CVViewModel()
    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let controller = UIHostingController(rootView: TemplateView(vm: screenVM))
+        let controller = UIHostingController(rootView: CVView(vm: screenVM))
         controller.view.translatesAutoresizingMaskIntoConstraints = false
         self.addChild(controller)
         self.view.addSubview(controller.view)
@@ -95,6 +95,6 @@ class TemplateViewController: UIViewController {
 
 struct TemplateView_Previews: PreviewProvider {
     static var previews: some View {
-        TemplateView(vm: TemplateScreenViewModel())
+        CVView(vm: CVViewModel())
     }
 }

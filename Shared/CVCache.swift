@@ -11,7 +11,7 @@ import SafariServices
 import UIKit
 import Firebase
 
-class ScreenManager: ObservableObject {
+class CVCache: ObservableObject {
 
     let db = Firestore.firestore()
 
@@ -25,7 +25,7 @@ class ScreenManager: ObservableObject {
     @Published var screens: [String: Screen] = [String: Screen]()
 
     // Screen View Models
-    @Published var screenVMs: [String: TemplateScreenViewModel] = [String: TemplateScreenViewModel]()
+    @Published var viewModels: [String: CVViewModel] = [String: CVViewModel]()
 
     // stores all the views controllers we've created
     //private var viewControllers: [String: UIViewController] = [String: UIViewController]()
@@ -107,10 +107,10 @@ class ScreenManager: ObservableObject {
 
         self.screens[screen.id] = screen
 
-        var vm = self.screenVMs[screen.id]
+        var vm = self.viewModels[screen.id]
         if vm == nil {
-            vm = TemplateScreenViewModel()
-            self.screenVMs[screen.id] = vm
+            vm = CVViewModel()
+            self.viewModels[screen.id] = vm
         }
 
         vm?.load(screen: screen)

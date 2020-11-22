@@ -9,12 +9,12 @@
 import Foundation
 import SwiftUI
 
-class TemplateScreenViewModel: ObservableObject {
+class CVViewModel: ObservableObject {
     
     @Published var templates: [UITemplate] = []
     @Published var screen: Screen?
     
-    func load(screen: Screen, async: Bool = false) {
+    func load(screen: Screen, async: Bool = true) {
         
         self.screen = screen
         

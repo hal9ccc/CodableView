@@ -10,7 +10,7 @@ import UIKit
 import SwiftUI
 
 struct TableScreenView: View {
-    @ObservedObject var screenManager: ScreenManager
+    @ObservedObject var screenManager: CVCache
     var screenId: String
 
     var body: some View {
@@ -20,10 +20,10 @@ struct TableScreenView: View {
 }
 
 class TableScreen: UITableViewController {
-    @ObservedObject private var screenManager: ScreenManager
+    @ObservedObject private var screenManager: CVCache
     @State var screenId: String
     
-    init(screenManager: ScreenManager, screenId: String) {
+    init(screenManager: CVCache, screenId: String) {
         self.screenManager = screenManager
         self.screenId      = screenId
         super.init(style: .plain)
