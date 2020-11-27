@@ -1,0 +1,46 @@
+{
+    "views": {
+        "Main": {
+            "id": "Main",
+            "content": [
+                { "List": {
+                    "style": "InsetGrouped",
+                    "content": [
+                        { "Label": {"of": "Sun",                "image": "sun.max"       } },
+                        { "Label": {"of": "Cloud",              "image": "cloud"         } },
+                        { "Label": {"of": "Rain",               "image": "cloud.rain"    } },
+                        { "Label": {"of": "Last Label",         "image": "finish"        } }
+                    ]
+                } }
+            ]
+        },
+        "VStackDemo": {
+            "id": "VStackDemo",
+            "content": [
+                { "VStack": {
+                    "content": [
+                         { "Text": {"of": "caption  d vsd gdsf gsdfg ",            "style": "caption"       } },
+                         { "Text": {"of": "title serif",        "style": "title"         , "fontDesign": "serif"} },
+                         { "Text": {"of": "title rounded",      "style": "title"         , "fontDesign": "rounded"} }
+                    ]
+                } }
+            ]
+        },
+        "TextDemo": {
+            "id": "TextDemo",
+            "content": [
+                 { "Text": {"of": "largeTitle",                 "style": "largeTitle"    } },
+                 { "Text": {"of": "title",                      "style": "title"         } },
+                 { "Text": {"of": "headline",                   "style": "headline"      } },
+                 { "Text": {"of": "subheadline",                "style": "subheadline"   } },
+                 { "Text": {"of": "body",                       "style": "body"          } },
+                 { "Text": {"of": "callout",                    "style": "callout"       } },
+                 { "Text": {"of": "footnote",                   "style": "footnote"      } },
+                 { "Text": {"of": "caption",                    "style": "caption"       } },
+                 { "Text": {"of": "title serif",                "style": "title"         , "fontDesign": "serif"} },
+                 { "Text": {"of": "title rounded",              "style": "title"         , "fontDesign": "rounded"} },
+                 { "Text": {"of": "title monospaced",           "style": "title"         , "fontDesign": "monospaced"} }
+            ]
+        }
+    }
+}

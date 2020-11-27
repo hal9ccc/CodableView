@@ -11,73 +11,45 @@ import SafariServices
 import UIKit
 import Firebase
 
-class CVCache: ObservableObject {
+class CVFirestore: ObservableObject {
 
     let db = Firestore.firestore()
 
-//  let navigationController: UINavigationController
-    let errorScreen   = Screen (id: "error",   title: "error", type: "table", rows: [], items: [], rightButton: nil)
-
     var isInitialized = false;
-    var screenId: String = "home"
+    var screenId: String = "TextDemo"
     
-    // Screen descriptions including id, type (table/template), model data
-    @Published var screens: [String: Screen] = [String: Screen]()
+    // Element descriptions including id, type (table/template), model data
+    @Published var elements: [String: CVElement] = [String: CVElement]()
 
     // Screen View Models
     @Published var viewModels: [String: CVViewModel] = [String: CVViewModel]()
 
-    // stores all the views controllers we've created
-    //private var viewControllers: [String: UIViewController] = [String: UIViewController]()
-
-//    init(navigationController: UINavigationController) {
-//        self.navigationController = navigationController
-//    }
-
-    /*
-    ** maps screens to views
-    */
-    func mapScreenToViewController (screen: Screen) -> UIViewController {
-        if screen.type == "table" {
-            return TableScreen(screenManager: self, screenId: screen.id)
-        }
-        else if screen.type == "templates" {
-            let vc = TemplateViewController()
-            vc.present(screen: screen)
-            return vc
-        }
-        else {
-            return TableScreen(screenManager: self, screenId: screen.id)
-        }
-    }
-    
-
     /*
     ** Begins listening on screens
     */
-    func beginListeningForScreens() {
+    func beginListening() {
         
-        db.collection("screens").addSnapshotListener { querySnapshot, error in
+        db.collection("views").addSnapshotListener { querySnapshot, error in
 
             print("got \(querySnapshot?.documentChanges.count ?? 0) screen change(s)")
             
             querySnapshot?.documentChanges.forEach { diff in
                 do {
-                    let screen = try diff.document.data(as: Screen.self)
+                    let element = try diff.document.data(as: CVElement.self)
 
-                    if (diff.type == .added && screen != nil) {
-                        print("New: \(screen!.id)")
-                        self.loadScreen(screen: screen!)
+                    if (diff.type == .added && element != nil) {
+                        print("New: \(element!.id!)")
+                        self.loadElement(element: element!)
                     }
 
-                    if (diff.type == .modified && screen != nil) {
-                        print("Modified: \(screen!.id)")
-                        self.loadScreen(screen: screen!)
+                    if (diff.type == .modified && element != nil) {
+                        print("Modified: \(element!.id!)")
+                        self.loadElement(element: element!)
                     }
 
                     if (diff.type == .removed) {
-                        print("Removed: \(screen!.id)")
-                        self.screens[screen!.id] = nil
+                        print("Removed: \(element!.id!)")
+                        self.elements[element!.id!] = nil
                     }
                 }
                 catch {
@@ -89,7 +61,6 @@ class CVCache: ObservableObject {
             
         }
         
-        print ("Listening for changes on /screens ...")
     }
 
     /*
@@ -103,40 +74,20 @@ class CVCache: ObservableObject {
     /*
     ** loads an updated screen and creates its view model
     */
-    func loadScreen (screen: Screen) {
+    func loadElement (element: CVElement) {
 
-        self.screens[screen.id] = screen
+        self.elements[element.id!] = element
 
-        var vm = self.viewModels[screen.id]
+        var vm = self.viewModels[element.id!]
         if vm == nil {
             vm = CVViewModel()
-            self.viewModels[screen.id] = vm
+            self.viewModels[element.id!] = vm
         }
 
-        vm?.load(screen: screen)
+        vm?.load(element: element)
         
         print("loaded \(String(describing: vm))")
     }
-    
-//    func switchScreen (id: String) {
-//
-//        guard let screen = screens[id] else {
-//            print("screen '\(id)' doesn't exist")
-//            return
-//        }
-//        
-//        // Navigate to new screen
-//        print("navigate to \(id)")
-//        let vc = self.mapScreenToViewController(screen: screen)
-//        //navigationController.pushViewController(vc, animated: true)
-//        //navigationController.viewControllers.append(vc)
-//
-//        // store the controller that was last responsible for this screen so it can be updated when
-//        // the screen changes
-//        //viewControllers[id] = vc
-//        
-//        self.screenId = id
-//    }
 
 
     func execute(_ action: Action?, from viewController: UIViewController) {

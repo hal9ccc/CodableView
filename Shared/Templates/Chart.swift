@@ -11,7 +11,7 @@ import SwiftUI
 import Shapes
 import Charts
 
-struct ChartModel: Decodable, CodableModel {
+struct ChartModel: Decodable {
     let name: String
 }
 
@@ -39,14 +39,14 @@ private struct ChartView: View {
 }
 
 
-struct ChartTemplate: UITemplate {
-    let id:    String?
-    let model: ChartModel
-    
-    func render() -> AnyView {
-        ChartView(model: model).toAnyView()
-    }
-}
+//struct ChartTemplate: CVElement {
+//    let id:    String?
+//    let model: ChartModel
+//    
+//    func render() -> AnyView {
+//        ChartView(model: model).toAnyView()
+//    }
+//}
 
 struct ChartView_Previews: PreviewProvider {
     

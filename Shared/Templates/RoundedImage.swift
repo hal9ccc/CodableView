@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RoundedImageModel: CodableModel {
+struct RoundedImageModel: Decodable {
     let title: String
     let imageURL: String
 }
@@ -24,14 +24,14 @@ struct RoundedImageView: View {
     }
 }
 
-struct RoundedImageTemplate: UITemplate {
-    let id:    String?
-    let model: RoundedImageModel
-    
-    func render() -> AnyView {
-        return RoundedImageView(model: model).toAnyView()
-    }
-}
+//struct RoundedImageTemplate: CVElement {
+//    let id:    String?
+//    let model: RoundedImageModel
+//    
+//    func render() -> AnyView {
+//        return RoundedImageView(model: model).toAnyView()
+//    }
+//}
 
 
 struct RoundedImageView_Previews: PreviewProvider {

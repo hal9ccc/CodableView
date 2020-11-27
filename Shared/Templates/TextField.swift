@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-struct TextfieldModel: Decodable, CodableModel {
+struct TextfieldModel: Decodable {
     let name: String
     let value: String
 }
@@ -33,14 +33,14 @@ struct TextfieldView: View {
     }
 }
 
-struct TextfieldTemplate: UITemplate {
-    let id:    String?
-    let model: TextfieldModel
-    
-    func render() -> AnyView {
-        TextfieldView(model: model).toAnyView()
-    }
-}
+//struct TextfieldTemplate: CVElement {
+//    let id:    String?
+//    let model: TextfieldModel
+//    
+//    func render() -> AnyView {
+//        TextfieldView(model: model).toAnyView()
+//    }
+//}
 
 struct TextfieldView_Previews: PreviewProvider {
     static var previews: some View {

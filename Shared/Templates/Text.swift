@@ -1,5 +1,5 @@
 //
-//  TextField.swift
+//  Text.swift
 //  CodableView
 //
 //  Created by Matthias Schulze on 14.11.20.
@@ -17,8 +17,7 @@ let SwiftFontDesigns: [String: Font.Design] = [
 // Map Iterable Enum to Dictionary so the elements can be accessed by name
 let SwiftTextStyles  = Font.TextStyle.allCases.reduce(into: [String: Font.TextStyle]()) { $0["\($1)"] = $1 }
 
-
-struct TextModel: Decodable, CodableModel {
+struct CVTextModel: Decodable {
     var text:           String
     var textStyle:      String?
     var fontDesign:     String?
@@ -26,8 +25,8 @@ struct TextModel: Decodable, CodableModel {
     var _fontDesign:    Font.Design? = nil
 
     enum TextModelCodingKeys: String, CodingKey {
-        case text
-        case textStyle
+        case of
+        case style
         case fontDesign
     }
 
@@ -37,8 +36,8 @@ struct TextModel: Decodable, CodableModel {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: TextModelCodingKeys.self)
-        text          = try container.decode(String.self, forKey: .text)
-        textStyle     = try container.decodeIfPresent(String.self, forKey: .textStyle)  ?? ""
+        text          = try container.decode(String.self, forKey: .of)
+        textStyle     = try container.decodeIfPresent(String.self, forKey: .style)  ?? ""
         fontDesign    = try container.decodeIfPresent(String.self, forKey: .fontDesign) ?? ""
         _textStyle    = SwiftTextStyles  [textStyle! ] ?? SwiftTextStyles  ["body"]!
         _fontDesign   = SwiftFontDesigns [fontDesign!] ?? SwiftFontDesigns ["default"]!
@@ -48,7 +47,7 @@ struct TextModel: Decodable, CodableModel {
 
 
 struct TextView: View {
-    let model: TextModel
+    let model: CVTextModel
     
     @State private var entry: String = ""
 
@@ -58,18 +57,18 @@ struct TextView: View {
     }
 }
 
-struct TextTemplate: UITemplate {
-    static func == (lhs: TextTemplate, rhs: TextTemplate) -> Bool {
-        return false
-    }
-    
-    let id:     String?
-    let model:  TextModel
-    
-    func render() -> AnyView {
-        return TextView(model: model).toAnyView()
-    }
-}
+//struct TextTemplate: CVElement {
+//    static func == (lhs: TextTemplate, rhs: TextTemplate) -> Bool {
+//        return false
+//    }
+//
+//    let id:     String?
+//    let model:  CVTextModel
+//
+//    func render() -> AnyView {
+//        return TextView(model: model).toAnyView()
+//    }
+//}
 
 
 
@@ -78,22 +77,19 @@ struct TextViewDemo: View {
    
     var body: some View { buildFrom(json: """
         {
-            "id": "preview",
-            "title": "Preview Screen",
-            "type": "templates",
-            "items": [
-                { "id":"1", "itemType": "text", "data": {"text": "largeTitle",                 "textStyle": "largeTitle"    } },
-                { "id":"2", "itemType": "text", "data": {"text": "title",                      "textStyle": "title"         } },
-                { "id":"3", "itemType": "text", "data": {"text": "headline",                   "textStyle": "headline"      } },
-                { "id":"4", "itemType": "text", "data": {"text": "subheadline",                "textStyle": "subheadline"   } },
-                { "id":"5", "itemType": "text", "data": {"text": "body",                       "textStyle": "body"          } },
-                { "id":"6", "itemType": "text", "data": {"text": "callout",                    "textStyle": "callout"       } },
-                { "id":"7", "itemType": "text", "data": {"text": "footnote",                   "textStyle": "footnote"      } },
-                { "id":"8", "itemType": "text", "data": {"text": "caption",                    "textStyle": "caption"       } },
-                { "id":"9", "itemType": "text", "data": {"text": "title serif",                "textStyle": "title"         , "fontDesign": "serif"} },
-                { "id":"0", "itemType": "text", "data": {"text": "title rounded",              "textStyle": "title"         , "fontDesign": "rounded"} },
-                { "id":"a", "itemType": "text", "data": {"text": "title monospaced",           "textStyle": "title"         , "fontDesign": "monospaced"} }
-
+            "title": "Text Preview",
+            "content": [
+                { "Text": {"of": "largeTitle",                 "style": "largeTitle"    } },
+                { "Text": {"of": "title",                      "style": "title"         } },
+                { "Text": {"of": "headline",                   "style": "headline"      } },
+                { "Text": {"of": "subheadline",                "style": "subheadline"   } },
+                { "Text": {"of": "body",                       "style": "body"          } },
+                { "Text": {"of": "callout",                    "style": "callout"       } },
+                { "Text": {"of": "footnote",                   "style": "footnote"      } },
+                { "Text": {"of": "caption",                    "style": "caption"       } },
+                { "Text": {"of": "title serif",                "style": "title"         , "fontDesign": "serif"} },
+                { "Text": {"of": "title rounded",              "style": "title"         , "fontDesign": "rounded"} },
+                { "Text": {"of": "title monospaced",           "style": "title"         , "fontDesign": "monospaced"} }
             ]
         }
         """

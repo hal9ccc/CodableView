@@ -8,14 +8,15 @@
 import SwiftUI
 import Firebase
 
-let screenManager = CVCache()
+let CVCache = CVFirestore()
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         print("FirebaseApp.configure()...")
         FirebaseApp.configure()
-        
-        screenManager.beginListeningForScreens()
+
+        print("CVCache.beginListening()...")
+        CVCache.beginListening()
         
         return true
     }
@@ -28,7 +29,7 @@ struct CodableViewDemoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(screenId: "SwiftUITest", cvCache: screenManager)
+            ContentView(screenId: "VStackDemo", cvCache: CVCache)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

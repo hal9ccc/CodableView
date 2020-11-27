@@ -15,7 +15,7 @@ struct ContentView: View {
 
     // screenManager provides us with screen data and updates
     //
-    @ObservedObject var cvCache : CVCache
+    @ObservedObject var cvCache : CVFirestore
 
 
 //    @FetchRequest(
@@ -99,7 +99,7 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(screenId: "SwiftUITest", cvCache: CVCache())
+        ContentView(screenId: "TextDemo", cvCache: CVFirestore())
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

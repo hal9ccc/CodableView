@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GradientBoxModel: CodableModel {
+struct GradientBoxModel: Decodable {
     let title: String
     let height: CGFloat
 }
@@ -48,14 +48,14 @@ struct GradientBoxView: View {
     }
 }
 
-struct GradientBoxTemplate: UITemplate {
-    let id:    String?
-    let model: GradientBoxModel
-    
-    func render() -> AnyView {
-        GradientBoxView(model: model).toAnyView()
-    }
-}
+//struct GradientBoxTemplate: CVElement {
+//    let id:    String?
+//    let model: GradientBoxModel
+//    
+//    func render() -> AnyView {
+//        GradientBoxView(model: model).toAnyView()
+//    }
+//}
 
 
 struct GradientBoxViewe_Previews: PreviewProvider {

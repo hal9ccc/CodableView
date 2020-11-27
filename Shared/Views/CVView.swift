@@ -7,75 +7,32 @@
 
 import SwiftUI
 
-func buildFrom(json: String, async: Bool = false) -> AnyView {
-
-    let jsonData    = json.data(using: .utf8)!
-    let vm          = CVViewModel()
-    
-    do {
-        let screen = try JSONDecoder().decode(Screen.self, from: jsonData)
-        vm.load(screen: screen, async: async)
-        return CVView(vm:vm).toAnyView()
-    }
-    catch {
-        print(error)
-        let s = "\(error)"
-        return VStack {
-            Text("an error")
-                .font(.system(Font.TextStyle.headline))
-                .padding()
-
-            ScrollView (.horizontal) {
-                Text("\(s)")
-                    .font(.system(Font.TextStyle.body, design: Font.Design.monospaced))
-                    .padding()
-            }
-        }
-        .padding()
-        .toAnyView()
-    }
-      
- }
-
 
 struct CVView: View {
     @ObservedObject var vm: CVViewModel
 
-    @Namespace var screenAnimation
-    @Namespace var templateAnimation
+    @Namespace var rootAnimation
     
     var body: some View {
-        VStack {
-            ForEach(vm.templates, id: \.id) { template in
-                //Section {
-                template.render()
-                //    .transition(.scale)
-                //}
-                    .matchedGeometryEffect(id: template.id, in: screenAnimation)
-            }
-
-        .transition(.scale)
-
+        ZStack {
+            renderContent(content: vm.rootElement?.content, namespace: rootAnimation)
         }
-        .matchedGeometryEffect(id: vm.screen?.id, in: screenAnimation)
-        
-        //Spacer ()
+        .matchedGeometryEffect(id: vm.rootElement?.id, in: rootAnimation)
     }
-    
 }
 
 class TemplateViewController: UIViewController {
 
-    @State private var screenVM: CVViewModel = CVViewModel()
+    @State private var vm: CVViewModel = CVViewModel()
    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let controller = UIHostingController(rootView: CVView(vm: screenVM))
+        let controller = UIHostingController(rootView: CVView(vm: vm))
         controller.view.translatesAutoresizingMaskIntoConstraints = false
         self.addChild(controller)
         self.view.addSubview(controller.view)
-        self.title = screenVM.screen?.title
+        self.title = vm.title
         controller.didMove(toParent: self)
         
         NSLayoutConstraint.activate([
@@ -87,8 +44,8 @@ class TemplateViewController: UIViewController {
 
     }
 
-    func present(screen: Screen) {
-        self.screenVM.load(screen: screen, async: true)
+    func present(element: CVElement) {
+        self.vm.load(element: element, async: true)
     }
 }
 

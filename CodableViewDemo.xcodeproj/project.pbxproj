@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E1D99B6256F020B00026C73 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D99B5256F020B00026C73 /* List.swift */; };
+		4E1D99B7256F020B00026C73 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D99B5256F020B00026C73 /* List.swift */; };
+		4E1D99BD25714AEF00026C73 /* buildFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D99BC25714AEF00026C73 /* buildFrom.swift */; };
+		4E1D99BE25714AEF00026C73 /* buildFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D99BC25714AEF00026C73 /* buildFrom.swift */; };
 		4E3ACD4B2568487E00767BA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD492568487E00767BA6 /* Constants.swift */; };
 		4E3ACD4C2568487E00767BA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD492568487E00767BA6 /* Constants.swift */; };
 		4E3ACD4D2568487E00767BA6 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD4A2568487E00767BA6 /* ImageDownloader.swift */; };
@@ -29,18 +33,14 @@
 		4E3ACD6C2568489400767BA6 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD622568489400767BA6 /* Actions.swift */; };
 		4E3ACD77256848B300767BA6 /* StaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD70256848B300767BA6 /* StaticView.swift */; };
 		4E3ACD78256848B300767BA6 /* StaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD70256848B300767BA6 /* StaticView.swift */; };
-		4E3ACD79256848B300767BA6 /* TableScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD71256848B300767BA6 /* TableScreenView.swift */; };
-		4E3ACD7A256848B300767BA6 /* TableScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD71256848B300767BA6 /* TableScreenView.swift */; };
 		4E3ACD7B256848B300767BA6 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD72256848B300767BA6 /* DebugView.swift */; };
 		4E3ACD7C256848B300767BA6 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD72256848B300767BA6 /* DebugView.swift */; };
 		4E3ACD7D256848B300767BA6 /* CVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD73256848B300767BA6 /* CVView.swift */; };
 		4E3ACD7E256848B300767BA6 /* CVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD73256848B300767BA6 /* CVView.swift */; };
 		4E3ACD81256848B300767BA6 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD75256848B300767BA6 /* URLImage.swift */; };
 		4E3ACD82256848B300767BA6 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD75256848B300767BA6 /* URLImage.swift */; };
-		4E3ACD8E256848BA00767BA6 /* CVCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD89256848BA00767BA6 /* CVCache.swift */; };
-		4E3ACD8F256848BA00767BA6 /* CVCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD89256848BA00767BA6 /* CVCache.swift */; };
-		4E3ACD90256848BA00767BA6 /* TableScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD8A256848BA00767BA6 /* TableScreenViewModel.swift */; };
-		4E3ACD91256848BA00767BA6 /* TableScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD8A256848BA00767BA6 /* TableScreenViewModel.swift */; };
+		4E3ACD8E256848BA00767BA6 /* CVFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD89256848BA00767BA6 /* CVFirestore.swift */; };
+		4E3ACD8F256848BA00767BA6 /* CVFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD89256848BA00767BA6 /* CVFirestore.swift */; };
 		4E3ACD92256848BA00767BA6 /* CVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD8B256848BA00767BA6 /* CVViewModel.swift */; };
 		4E3ACD93256848BA00767BA6 /* CVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD8B256848BA00767BA6 /* CVViewModel.swift */; };
 		4E3ACD9C256848BF00767BA6 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD97256848BF00767BA6 /* Chart.swift */; };
@@ -66,11 +66,22 @@
 		4E6E76EA25681FD1009F9892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E6E76D025681FD1009F9892 /* Assets.xcassets */; };
 		4E6E76FB256826F4009F9892 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E6E76FA256826F4009F9892 /* GoogleService-Info.plist */; };
 		4E6E76FC256826F4009F9892 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E6E76FA256826F4009F9892 /* GoogleService-Info.plist */; };
+		4EBC9F3225717F9B008716EA /* renderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC9F3125717F9B008716EA /* renderContent.swift */; };
+		4EBC9F3325717F9B008716EA /* renderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC9F3125717F9B008716EA /* renderContent.swift */; };
+		4EBC9F3B2571B272008716EA /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC9F3A2571B272008716EA /* Label.swift */; };
+		4EBC9F3C2571B272008716EA /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC9F3A2571B272008716EA /* Label.swift */; };
+		4EBC9F432571B68D008716EA /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 4EBC9F422571B68D008716EA /* SFSafeSymbols */; };
+		4EBC9F472571BEA1008716EA /* VStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC9F462571BEA1008716EA /* VStack.swift */; };
+		4EBC9F482571BEA1008716EA /* VStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC9F462571BEA1008716EA /* VStack.swift */; };
+		4EBC9F4C2571C3D9008716EA /* views.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EBC9F4B2571C3D9008716EA /* views.json */; };
+		4EBC9F4D2571C3D9008716EA /* views.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EBC9F4B2571C3D9008716EA /* views.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		201A2851694B6D2F90673CF7 /* Pods-CodableViewDemo (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodableViewDemo (macOS).release.xcconfig"; path = "Target Support Files/Pods-CodableViewDemo (macOS)/Pods-CodableViewDemo (macOS).release.xcconfig"; sourceTree = "<group>"; };
 		473E00CEFB7AC4E7A5514366 /* Pods-CodableViewDemo (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodableViewDemo (macOS).debug.xcconfig"; path = "Target Support Files/Pods-CodableViewDemo (macOS)/Pods-CodableViewDemo (macOS).debug.xcconfig"; sourceTree = "<group>"; };
+		4E1D99B5256F020B00026C73 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		4E1D99BC25714AEF00026C73 /* buildFrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buildFrom.swift; sourceTree = "<group>"; };
 		4E3ACD492568487E00767BA6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4E3ACD4A2568487E00767BA6 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		4E3ACD522568488A00767BA6 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -82,12 +93,10 @@
 		4E3ACD612568489400767BA6 /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		4E3ACD622568489400767BA6 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		4E3ACD70256848B300767BA6 /* StaticView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticView.swift; sourceTree = "<group>"; };
-		4E3ACD71256848B300767BA6 /* TableScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableScreenView.swift; sourceTree = "<group>"; };
 		4E3ACD72256848B300767BA6 /* DebugView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		4E3ACD73256848B300767BA6 /* CVView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVView.swift; sourceTree = "<group>"; };
 		4E3ACD75256848B300767BA6 /* URLImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
-		4E3ACD89256848BA00767BA6 /* CVCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCache.swift; sourceTree = "<group>"; };
-		4E3ACD8A256848BA00767BA6 /* TableScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableScreenViewModel.swift; sourceTree = "<group>"; };
+		4E3ACD89256848BA00767BA6 /* CVFirestore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVFirestore.swift; sourceTree = "<group>"; };
 		4E3ACD8B256848BA00767BA6 /* CVViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVViewModel.swift; sourceTree = "<group>"; };
 		4E3ACD97256848BF00767BA6 /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		4E3ACD98256848BF00767BA6 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
@@ -106,6 +115,10 @@
 		4E6E76E025681FD1009F9892 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		4E6E76F525682039009F9892 /* CodableViewDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CodableViewDemo.entitlements; sourceTree = "<group>"; };
 		4E6E76FA256826F4009F9892 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4EBC9F3125717F9B008716EA /* renderContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = renderContent.swift; sourceTree = "<group>"; };
+		4EBC9F3A2571B272008716EA /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		4EBC9F462571BEA1008716EA /* VStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VStack.swift; sourceTree = "<group>"; };
+		4EBC9F4B2571C3D9008716EA /* views.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = views.json; sourceTree = "<group>"; };
 		6A51857829DB3BF7DF5F241C /* Pods-CodableViewDemo (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodableViewDemo (iOS).release.xcconfig"; path = "Target Support Files/Pods-CodableViewDemo (iOS)/Pods-CodableViewDemo (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		DDB59A0728B71428AD4CD13D /* Pods-CodableViewDemo (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodableViewDemo (iOS).debug.xcconfig"; path = "Target Support Files/Pods-CodableViewDemo (iOS)/Pods-CodableViewDemo (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EBC9F432571B68D008716EA /* SFSafeSymbols in Frameworks */,
 				4E4EC06A25682CC2003B08F3 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,6 +155,8 @@
 			children = (
 				4E3ACD492568487E00767BA6 /* Constants.swift */,
 				4E3ACD4A2568487E00767BA6 /* ImageDownloader.swift */,
+				4E1D99BC25714AEF00026C73 /* buildFrom.swift */,
+				4EBC9F3125717F9B008716EA /* renderContent.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -172,7 +188,6 @@
 			children = (
 				4E3ACD73256848B300767BA6 /* CVView.swift */,
 				4E3ACD70256848B300767BA6 /* StaticView.swift */,
-				4E3ACD71256848B300767BA6 /* TableScreenView.swift */,
 				4E3ACD72256848B300767BA6 /* DebugView.swift */,
 				4E3ACD75256848B300767BA6 /* URLImage.swift */,
 			);
@@ -182,7 +197,6 @@
 		4E3ACD87256848BA00767BA6 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				4E3ACD8A256848BA00767BA6 /* TableScreenViewModel.swift */,
 				4E3ACD8B256848BA00767BA6 /* CVViewModel.swift */,
 			);
 			path = ViewModels;
@@ -191,10 +205,13 @@
 		4E3ACD96256848BF00767BA6 /* Templates */ = {
 			isa = PBXGroup;
 			children = (
+				4E3ACD9A256848BF00767BA6 /* Text.swift */,
+				4EBC9F3A2571B272008716EA /* Label.swift */,
+				4E1D99B5256F020B00026C73 /* List.swift */,
+				4EBC9F462571BEA1008716EA /* VStack.swift */,
 				4E3ACD97256848BF00767BA6 /* Chart.swift */,
 				4E3ACD98256848BF00767BA6 /* TextField.swift */,
 				4E3ACD99256848BF00767BA6 /* RoundedImage.swift */,
-				4E3ACD9A256848BF00767BA6 /* Text.swift */,
 				4E3ACD9B256848BF00767BA6 /* GradientBox.swift */,
 			);
 			path = Templates;
@@ -216,6 +233,7 @@
 		4E6E76CA25681FCF009F9892 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4EBC9F502571C409008716EA /* Data */,
 				4E3ACD512568488A00767BA6 /* Extensions */,
 				4E3ACD482568487E00767BA6 /* Utilities */,
 				4E3ACD5D2568489400767BA6 /* Models */,
@@ -223,7 +241,7 @@
 				4E3ACD6F256848B300767BA6 /* Views */,
 				4E3ACD96256848BF00767BA6 /* Templates */,
 				4E6E76CD25681FCF009F9892 /* CodableViewDemoApp.swift */,
-				4E3ACD89256848BA00767BA6 /* CVCache.swift */,
+				4E3ACD89256848BA00767BA6 /* CVFirestore.swift */,
 				4E6E76CE25681FCF009F9892 /* ContentView.swift */,
 				4E6E76CF25681FCF009F9892 /* Persistence.swift */,
 				4E6E76D025681FD1009F9892 /* Assets.xcassets */,
@@ -259,6 +277,14 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		4EBC9F502571C409008716EA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4EBC9F4B2571C3D9008716EA /* views.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		E4820617F408E86369665544 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +316,7 @@
 			name = "CodableViewDemo (iOS)";
 			packageProductDependencies = (
 				4E4EC06925682CC2003B08F3 /* Charts */,
+				4EBC9F422571B68D008716EA /* SFSafeSymbols */,
 			);
 			productName = "CodableViewDemo (iOS)";
 			productReference = 4E6E76D525681FD1009F9892 /* CodableViewDemo.app */;
@@ -342,6 +369,7 @@
 			mainGroup = 4E6E76C525681FCF009F9892;
 			packageReferences = (
 				4E4EC06825682CC2003B08F3 /* XCRemoteSwiftPackageReference "swiftui-charts" */,
+				4EBC9F412571B68D008716EA /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 			);
 			productRefGroup = 4E6E76D625681FD1009F9892 /* Products */;
 			projectDirPath = "";
@@ -360,6 +388,7 @@
 			files = (
 				4E6E76E925681FD1009F9892 /* Assets.xcassets in Resources */,
 				4E6E76FB256826F4009F9892 /* GoogleService-Info.plist in Resources */,
+				4EBC9F4C2571C3D9008716EA /* views.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +398,7 @@
 			files = (
 				4E6E76EA25681FD1009F9892 /* Assets.xcassets in Resources */,
 				4E6E76FC256826F4009F9892 /* GoogleService-Info.plist in Resources */,
+				4EBC9F4D2571C3D9008716EA /* views.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,16 +494,18 @@
 				4E3ACD632568489400767BA6 /* CVButton.swift in Sources */,
 				4E3ACD4B2568487E00767BA6 /* Constants.swift in Sources */,
 				4E3ACD77256848B300767BA6 /* StaticView.swift in Sources */,
-				4E3ACD79256848B300767BA6 /* TableScreenView.swift in Sources */,
 				4E3ACD9E256848BF00767BA6 /* TextField.swift in Sources */,
 				4E3ACD9C256848BF00767BA6 /* Chart.swift in Sources */,
 				4E3ACD652568489400767BA6 /* Templates.swift in Sources */,
 				4E3ACD692568489400767BA6 /* Row.swift in Sources */,
+				4E1D99B6256F020B00026C73 /* List.swift in Sources */,
+				4EBC9F3225717F9B008716EA /* renderContent.swift in Sources */,
 				4E3ACD552568488A00767BA6 /* String+Extensions.swift in Sources */,
 				4E3ACDA2256848BF00767BA6 /* Text.swift in Sources */,
+				4E1D99BD25714AEF00026C73 /* buildFrom.swift in Sources */,
 				4E3ACD592568488A00767BA6 /* Dictionary+Extensions.swift in Sources */,
-				4E3ACD90256848BA00767BA6 /* TableScreenViewModel.swift in Sources */,
 				4E3ACD7D256848B300767BA6 /* CVView.swift in Sources */,
+				4EBC9F3B2571B272008716EA /* Label.swift in Sources */,
 				4E3ACDA4256848BF00767BA6 /* GradientBox.swift in Sources */,
 				4E6E76E325681FD1009F9892 /* CodableViewDemoApp.swift in Sources */,
 				4E6E76E725681FD1009F9892 /* Persistence.swift in Sources */,
@@ -481,9 +513,10 @@
 				4E3ACD4D2568487E00767BA6 /* ImageDownloader.swift in Sources */,
 				4E3ACD7B256848B300767BA6 /* DebugView.swift in Sources */,
 				4E3ACD572568488A00767BA6 /* View+Extensions.swift in Sources */,
+				4EBC9F472571BEA1008716EA /* VStack.swift in Sources */,
 				4E6E76E525681FD1009F9892 /* ContentView.swift in Sources */,
 				4E3ACDA0256848BF00767BA6 /* RoundedImage.swift in Sources */,
-				4E3ACD8E256848BA00767BA6 /* CVCache.swift in Sources */,
+				4E3ACD8E256848BA00767BA6 /* CVFirestore.swift in Sources */,
 				4E3ACD672568489400767BA6 /* Screen.swift in Sources */,
 				4E3ACD6B2568489400767BA6 /* Actions.swift in Sources */,
 				4E3ACD81256848B300767BA6 /* URLImage.swift in Sources */,
@@ -498,16 +531,18 @@
 				4E3ACD642568489400767BA6 /* CVButton.swift in Sources */,
 				4E3ACD4C2568487E00767BA6 /* Constants.swift in Sources */,
 				4E3ACD78256848B300767BA6 /* StaticView.swift in Sources */,
-				4E3ACD7A256848B300767BA6 /* TableScreenView.swift in Sources */,
 				4E3ACD9F256848BF00767BA6 /* TextField.swift in Sources */,
 				4E3ACD9D256848BF00767BA6 /* Chart.swift in Sources */,
 				4E3ACD662568489400767BA6 /* Templates.swift in Sources */,
 				4E3ACD6A2568489400767BA6 /* Row.swift in Sources */,
+				4E1D99B7256F020B00026C73 /* List.swift in Sources */,
+				4EBC9F3325717F9B008716EA /* renderContent.swift in Sources */,
 				4E3ACD562568488A00767BA6 /* String+Extensions.swift in Sources */,
 				4E3ACDA3256848BF00767BA6 /* Text.swift in Sources */,
+				4E1D99BE25714AEF00026C73 /* buildFrom.swift in Sources */,
 				4E3ACD5A2568488A00767BA6 /* Dictionary+Extensions.swift in Sources */,
-				4E3ACD91256848BA00767BA6 /* TableScreenViewModel.swift in Sources */,
 				4E3ACD7E256848B300767BA6 /* CVView.swift in Sources */,
+				4EBC9F3C2571B272008716EA /* Label.swift in Sources */,
 				4E3ACDA5256848BF00767BA6 /* GradientBox.swift in Sources */,
 				4E6E76E425681FD1009F9892 /* CodableViewDemoApp.swift in Sources */,
 				4E6E76E825681FD1009F9892 /* Persistence.swift in Sources */,
@@ -515,9 +550,10 @@
 				4E3ACD4E2568487E00767BA6 /* ImageDownloader.swift in Sources */,
 				4E3ACD7C256848B300767BA6 /* DebugView.swift in Sources */,
 				4E3ACD582568488A00767BA6 /* View+Extensions.swift in Sources */,
+				4EBC9F482571BEA1008716EA /* VStack.swift in Sources */,
 				4E6E76E625681FD1009F9892 /* ContentView.swift in Sources */,
 				4E3ACDA1256848BF00767BA6 /* RoundedImage.swift in Sources */,
-				4E3ACD8F256848BA00767BA6 /* CVCache.swift in Sources */,
+				4E3ACD8F256848BA00767BA6 /* CVFirestore.swift in Sources */,
 				4E3ACD682568489400767BA6 /* Screen.swift in Sources */,
 				4E3ACD6C2568489400767BA6 /* Actions.swift in Sources */,
 				4E3ACD82256848B300767BA6 /* URLImage.swift in Sources */,
@@ -645,7 +681,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CodableViewDemo.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HDMQU4KW6N;
 				ENABLE_PREVIEWS = YES;
@@ -671,7 +707,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CodableViewDemo.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HDMQU4KW6N;
 				ENABLE_PREVIEWS = YES;
@@ -782,6 +818,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		4EBC9F412571B68D008716EA /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/piknotech/SFSafeSymbols.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -789,6 +833,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4E4EC06825682CC2003B08F3 /* XCRemoteSwiftPackageReference "swiftui-charts" */;
 			productName = Charts;
+		};
+		4EBC9F422571B68D008716EA /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4EBC9F412571B68D008716EA /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
 		};
 /* End XCSwiftPackageProductDependency section */
 

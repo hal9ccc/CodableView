@@ -17,7 +17,7 @@ struct Screen: Identifiable, Decodable {
     var title: String
     var type: String
     var rows: [Row]?
-    var items: [TemplateItem]?
+    var items: [CVElement]?
     var rightButton: CVButton?
 
     enum ScreenCodingKeys: String, CodingKey {
