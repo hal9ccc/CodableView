@@ -17,7 +17,9 @@ let SwiftFontDesigns: [String: Font.Design] = [
 // Map Iterable Enum to Dictionary so the elements can be accessed by name
 let SwiftTextStyles  = Font.TextStyle.allCases.reduce(into: [String: Font.TextStyle]()) { $0["\($1)"] = $1 }
 
-struct CVTextModel: Decodable {
+struct CVTextModel: viewable {
+    var uniqueId: UUID
+    
     var text:           String
     var textStyle:      String?
     var fontDesign:     String?
@@ -31,11 +33,13 @@ struct CVTextModel: Decodable {
     }
 
     init(from text: String) {
+        uniqueId      = UUID()
         self.text     = text
     }
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: TextModelCodingKeys.self)
+        uniqueId      = UUID()
         text          = try container.decode(String.self, forKey: .of)
         textStyle     = try container.decodeIfPresent(String.self, forKey: .style)  ?? ""
         fontDesign    = try container.decodeIfPresent(String.self, forKey: .fontDesign) ?? ""

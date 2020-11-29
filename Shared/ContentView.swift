@@ -11,7 +11,7 @@ import CoreData
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
-    @State var screenId: String
+    @State var viewId: String
 
     // screenManager provides us with screen data and updates
     //
@@ -25,14 +25,12 @@ struct ContentView: View {
 //    private var items: FetchedResults<Item>
     
     var body: some View {
-        //let i = screenManager.screens[screenId]
-        let vm = cvCache.viewModels[screenId]
-        //let a = i?.items
-        //let _: () = print(screenManager.screens)
 
+        let _: () = print("building screen \(viewId)")
         
-        let _: () = print("screenManager.screenVMs: \(cvCache.viewModels)")
-        let _: () = print("building screen \(screenId) using vm \(String(describing: vm))")
+        // retrieve the current view model
+        let vm = cvCache.viewModels[viewId]
+
         
         NavigationView {
 
@@ -99,7 +97,7 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(screenId: "TextDemo", cvCache: CVFirestore())
+        ContentView(viewId: "TextDemo", cvCache: CVFirestore())
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

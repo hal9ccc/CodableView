@@ -11,7 +11,9 @@ import SwiftUI
 import Shapes
 import Charts
 
-struct ChartModel: Decodable {
+struct ChartModel: viewable {
+    var uniqueId: UUID
+    
     let name: String
 }
 

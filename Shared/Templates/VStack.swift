@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct CVVStackModel: Decodable {
+struct CVVStackModel: viewable {
+    var uniqueId: UUID
+    
 
     var content: [CVElement]? = nil
     
@@ -17,6 +19,7 @@ struct CVVStackModel: Decodable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: keys.self)
+        uniqueId      = UUID()
         content       = try container.decodeIfPresent([CVElement].self, forKey: .content)  ?? [CVElement]()
     }
 

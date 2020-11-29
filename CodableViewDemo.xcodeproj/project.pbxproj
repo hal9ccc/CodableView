@@ -21,10 +21,8 @@
 		4E3ACD582568488A00767BA6 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD532568488A00767BA6 /* View+Extensions.swift */; };
 		4E3ACD592568488A00767BA6 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD542568488A00767BA6 /* Dictionary+Extensions.swift */; };
 		4E3ACD5A2568488A00767BA6 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD542568488A00767BA6 /* Dictionary+Extensions.swift */; };
-		4E3ACD632568489400767BA6 /* CVButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD5E2568489400767BA6 /* CVButton.swift */; };
-		4E3ACD642568489400767BA6 /* CVButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD5E2568489400767BA6 /* CVButton.swift */; };
-		4E3ACD652568489400767BA6 /* Templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD5F2568489400767BA6 /* Templates.swift */; };
-		4E3ACD662568489400767BA6 /* Templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD5F2568489400767BA6 /* Templates.swift */; };
+		4E3ACD652568489400767BA6 /* CVElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD5F2568489400767BA6 /* CVElement.swift */; };
+		4E3ACD662568489400767BA6 /* CVElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD5F2568489400767BA6 /* CVElement.swift */; };
 		4E3ACD672568489400767BA6 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD602568489400767BA6 /* Screen.swift */; };
 		4E3ACD682568489400767BA6 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD602568489400767BA6 /* Screen.swift */; };
 		4E3ACD692568489400767BA6 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD612568489400767BA6 /* Row.swift */; };
@@ -87,8 +85,7 @@
 		4E3ACD522568488A00767BA6 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4E3ACD532568488A00767BA6 /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		4E3ACD542568488A00767BA6 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
-		4E3ACD5E2568489400767BA6 /* CVButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVButton.swift; sourceTree = "<group>"; };
-		4E3ACD5F2568489400767BA6 /* Templates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Templates.swift; sourceTree = "<group>"; };
+		4E3ACD5F2568489400767BA6 /* CVElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVElement.swift; sourceTree = "<group>"; };
 		4E3ACD602568489400767BA6 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		4E3ACD612568489400767BA6 /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		4E3ACD622568489400767BA6 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
@@ -174,8 +171,7 @@
 		4E3ACD5D2568489400767BA6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4E3ACD5E2568489400767BA6 /* CVButton.swift */,
-				4E3ACD5F2568489400767BA6 /* Templates.swift */,
+				4E3ACD5F2568489400767BA6 /* CVElement.swift */,
 				4E3ACD602568489400767BA6 /* Screen.swift */,
 				4E3ACD612568489400767BA6 /* Row.swift */,
 				4E3ACD622568489400767BA6 /* Actions.swift */,
@@ -491,12 +487,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E3ACD92256848BA00767BA6 /* CVViewModel.swift in Sources */,
-				4E3ACD632568489400767BA6 /* CVButton.swift in Sources */,
 				4E3ACD4B2568487E00767BA6 /* Constants.swift in Sources */,
 				4E3ACD77256848B300767BA6 /* StaticView.swift in Sources */,
 				4E3ACD9E256848BF00767BA6 /* TextField.swift in Sources */,
 				4E3ACD9C256848BF00767BA6 /* Chart.swift in Sources */,
-				4E3ACD652568489400767BA6 /* Templates.swift in Sources */,
+				4E3ACD652568489400767BA6 /* CVElement.swift in Sources */,
 				4E3ACD692568489400767BA6 /* Row.swift in Sources */,
 				4E1D99B6256F020B00026C73 /* List.swift in Sources */,
 				4EBC9F3225717F9B008716EA /* renderContent.swift in Sources */,
@@ -528,12 +523,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E3ACD93256848BA00767BA6 /* CVViewModel.swift in Sources */,
-				4E3ACD642568489400767BA6 /* CVButton.swift in Sources */,
 				4E3ACD4C2568487E00767BA6 /* Constants.swift in Sources */,
 				4E3ACD78256848B300767BA6 /* StaticView.swift in Sources */,
 				4E3ACD9F256848BF00767BA6 /* TextField.swift in Sources */,
 				4E3ACD9D256848BF00767BA6 /* Chart.swift in Sources */,
-				4E3ACD662568489400767BA6 /* Templates.swift in Sources */,
+				4E3ACD662568489400767BA6 /* CVElement.swift in Sources */,
 				4E3ACD6A2568489400767BA6 /* Row.swift in Sources */,
 				4E1D99B7256F020B00026C73 /* List.swift in Sources */,
 				4EBC9F3325717F9B008716EA /* renderContent.swift in Sources */,

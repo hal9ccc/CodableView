@@ -9,28 +9,35 @@
 import Foundation
 import SwiftUI
 
-class CVViewModel: ObservableObject {
+class CVViewModel: ObservableObject, Identifiable {
     
     //@Published var content: [CVElement] = [CVElement]
-    @Published var rootElement: CVElement?
+    @Published var id: String?
+    @Published var element: CVElement?
     @Published var title: String?
 
     func load(element: CVElement, async: Bool = true) {
         
+        print("\(String(describing: id)) loading \(element)")
+        
         if async {
             DispatchQueue.main.async {
                 withAnimation (.easeInOut) {
-                    self.rootElement = element
+                    self.element = element
                 }
             }
         }
         else {
             withAnimation (.easeInOut) {
-                self.rootElement = element
+                self.element = element
             }
         }
     }
 
+    init(from id: String) {
+        self.id     = id
+    }
+    
 
 //        let arr: Range<Int> = (screen.items != nil) ? screen.items!.indices : [].indices
 //

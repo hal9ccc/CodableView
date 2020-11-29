@@ -19,7 +19,9 @@ let SwiftListStyles: [String: Any] = [
 // Map Iterable Enum to Dictionary so the elements can be accessed by name
 //let SwiftTextStyles2  = Font.TextStyle.allCases.reduce(into: [String: Font.TextStyle]()) { $0["\($1)"] = $1 }
 
-struct CVListModel: Decodable {
+struct CVListModel: viewable {
+    var uniqueId: UUID
+    
     var listStyle:      String?
     var _listStyle:     Any? = nil
 
@@ -31,6 +33,8 @@ struct CVListModel: Decodable {
     }
     
     init(from decoder: Decoder) throws {
+        uniqueId      = UUID()
+
         let container = try decoder.container(keyedBy: ListModelCodingKeys.self)
         listStyle     = try container.decodeIfPresent(String.self, forKey: .style)  ?? ""
         _listStyle    = SwiftListStyles  [listStyle! ] ?? SwiftListStyles  ["plain"]!
@@ -78,21 +82,17 @@ struct ListViewDemo: View {
    
     var body: some View { buildFrom(json: """
         {
-            "title": "List Preview",
+            "id": "Main",
             "content": [
-                { "List": { "content": [
-                    { "Text": {"text": "largeTitle",                 "textStyle": "largeTitle"    } },
-                    { "Text": {"text": "title",                      "textStyle": "title"         } },
-                    { "Text": {"text": "headline",                   "textStyle": "headline"      } },
-                    { "Text": {"text": "subheadline",                "textStyle": "subheadline"   } },
-                    { "Text": {"text": "body",                       "textStyle": "body"          } },
-                    { "Text": {"text": "callout",                    "textStyle": "callout"       } },
-                    { "Text": {"text": "footnote",                   "textStyle": "footnote"      } },
-                    { "Text": {"text": "caption",                    "textStyle": "caption"       } },
-                    { "Text": {"text": "title serif",                "textStyle": "title"         , "fontDesign": "serif"} },
-                    { "Text": {"text": "title rounded",              "textStyle": "title"         , "fontDesign": "rounded"} },
-                    { "Text": {"text": "title monospaced",           "textStyle": "title"         , "fontDesign": "monospaced"} }
-                ] } }
+                { "List": {
+                    "style": "grouped",
+                    "content": [
+                        { "Label": {"of": "Sun",                "image": "sun.max"       } },
+                        { "Label": {"of": "Cloud",              "image": "cloud"         } },
+                        { "Label": {"of": "Rain",               "image": "cloud.rain"    } },
+                        { "Label": {"of": "Last Label",         "image": "ball"          } }
+                    ]
+                } }
             ]
         }
         """

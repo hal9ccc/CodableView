@@ -29,7 +29,7 @@ struct CodableViewDemoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(screenId: "VStackDemo", cvCache: CVCache)
+            ContentView(viewId: "Main", cvCache: CVCache)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

@@ -47,20 +47,26 @@ import SwiftUI
 //
 //}
 
-protocol UITemplate {
+protocol viewable: Decodable {
     var uniqueId: UUID { get }
-    func render() -> AnyView
 }
 
-extension UITemplate {
-    var id: String { "\(UUID())" }
-    var uniqueId: UUID { UUID() }
-}
+
+//protocol UITemplate {
+//    var uniqueId: UUID { get }
+//    func render() -> AnyView
+//}
+//
+//extension UITemplate {
+//    var id: String { "\(UUID())" }
+//    var uniqueId: UUID { UUID() }
+//}
 
 
 struct CVElement: Identifiable, Decodable {
-    var id: String? = "\(UUID())"
-
+    var id:             String? { "\(UUID())" }
+    var uniqueId:       UUID  { UUID() }
+    
     var Text:           CVTextModel? = nil
     var Label:          CVLabelModel? = nil
 
@@ -68,19 +74,36 @@ struct CVElement: Identifiable, Decodable {
     var List:           CVListModel? = nil
 
     var content: [CVElement]? = [CVElement]()
-    
-    
+
+    // builds a view matching the first viewable
+    // TODO: find indirect way to return the corrosponding view
     func render() -> AnyView {
+
+        //print ("Model: \(String(describing: model()))");
+        
         if Text         != nil { return TextView        (model: Text!       ).toAnyView() }
         if Label        != nil { return LabelView       (model: Label!      ).toAnyView() }
-
         if VStack       != nil { return CVVStackView    (model: VStack!     ).toAnyView() }
         if List         != nil { return CVListView      (model: List!       ).toAnyView() }
 
         return SwiftUI.Text("no data").toAnyView()
     }
     
-   
+
+    // uses reflection to return the first property that conforms to our viewable protocol
+    func model() -> viewable {
+        let mirror = Mirror(reflecting: self)
+
+        for child in mirror.children {
+            if let viewable = child.value as? viewable {
+                return viewable
+            }
+        }
+        
+        return CVTextModel(from: "no data")
+    }
+    
+    
 }
 
 

@@ -10,7 +10,7 @@ import SwiftUI
 func buildFrom(json: String, async: Bool = false) -> AnyView {
 
     let jsonData    = json.data(using: .utf8)!
-    let vm          = CVViewModel()
+    let vm          = CVViewModel(from: "root")
     
     do {
         let element = try JSONDecoder().decode(CVElement.self, from: jsonData)

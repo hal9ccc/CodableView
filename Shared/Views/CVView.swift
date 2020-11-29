@@ -15,15 +15,15 @@ struct CVView: View {
     
     var body: some View {
         ZStack {
-            renderContent(content: vm.rootElement?.content, namespace: rootAnimation)
+            renderContent(content: vm.element?.content, namespace: rootAnimation)
         }
-        .matchedGeometryEffect(id: vm.rootElement?.id, in: rootAnimation)
+        .matchedGeometryEffect(id: vm.element?.id, in: rootAnimation)
     }
 }
 
 class TemplateViewController: UIViewController {
 
-    @State private var vm: CVViewModel = CVViewModel()
+    @State private var vm: CVViewModel = CVViewModel(from: "Main")
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +52,6 @@ class TemplateViewController: UIViewController {
 
 struct TemplateView_Previews: PreviewProvider {
     static var previews: some View {
-        CVView(vm: CVViewModel())
+        CVView(vm: CVViewModel(from: "root"))
     }
 }

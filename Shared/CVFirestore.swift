@@ -34,17 +34,20 @@ class CVFirestore: ObservableObject {
             print("got \(querySnapshot?.documentChanges.count ?? 0) screen change(s)")
             
             querySnapshot?.documentChanges.forEach { diff in
+
+                print (diff.document.documentID)
+
                 do {
                     let element = try diff.document.data(as: CVElement.self)
 
                     if (diff.type == .added && element != nil) {
                         print("New: \(element!.id!)")
-                        self.loadElement(element: element!)
+                        self.loadElement(element: element!, id: diff.document.documentID)
                     }
 
                     if (diff.type == .modified && element != nil) {
                         print("Modified: \(element!.id!)")
-                        self.loadElement(element: element!)
+                        self.loadElement(element: element!, id: diff.document.documentID)
                     }
 
                     if (diff.type == .removed) {
@@ -74,14 +77,14 @@ class CVFirestore: ObservableObject {
     /*
     ** loads an updated screen and creates its view model
     */
-    func loadElement (element: CVElement) {
+    func loadElement (element: CVElement, id: String) {
 
-        self.elements[element.id!] = element
+        self.elements[id] = element
 
-        var vm = self.viewModels[element.id!]
+        var vm = self.viewModels[id]
         if vm == nil {
-            vm = CVViewModel()
-            self.viewModels[element.id!] = vm
+            vm = CVViewModel(from: id)
+            self.viewModels[id] = vm
         }
 
         vm?.load(element: element)
