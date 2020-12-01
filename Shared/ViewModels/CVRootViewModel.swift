@@ -9,12 +9,12 @@
 import Foundation
 import SwiftUI
 
-class CVViewModel: ObservableObject, Identifiable {
+class CVRootViewModel: ObservableObject, Identifiable {
     
-    //@Published var content: [CVElement] = [CVElement]
     @Published var id: String?
-    @Published var element: CVElement?
     @Published var title: String?
+
+    @Published var element: CVElement?
 
     func load(element: CVElement, async: Bool = true) {
         

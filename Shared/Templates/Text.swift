@@ -18,63 +18,37 @@ let SwiftFontDesigns: [String: Font.Design] = [
 let SwiftTextStyles  = Font.TextStyle.allCases.reduce(into: [String: Font.TextStyle]()) { $0["\($1)"] = $1 }
 
 struct CVTextModel: viewable {
-    var uniqueId: UUID
-    
+   
+    var content: [CVElement]?
+
     var text:           String
     var textStyle:      String?
     var fontDesign:     String?
-    var _textStyle:     Font.TextStyle? = nil
-    var _fontDesign:    Font.Design? = nil
 
     enum TextModelCodingKeys: String, CodingKey {
-        case of
-        case style
-        case fontDesign
+        case text = "of"
     }
 
     init(from text: String) {
-        uniqueId      = UUID()
+        self.content  = [CVElement]()
         self.text     = text
     }
-
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: TextModelCodingKeys.self)
-        uniqueId      = UUID()
-        text          = try container.decode(String.self, forKey: .of)
-        textStyle     = try container.decodeIfPresent(String.self, forKey: .style)  ?? ""
-        fontDesign    = try container.decodeIfPresent(String.self, forKey: .fontDesign) ?? ""
-        _textStyle    = SwiftTextStyles  [textStyle! ] ?? SwiftTextStyles  ["body"]!
-        _fontDesign   = SwiftFontDesigns [fontDesign!] ?? SwiftFontDesigns ["default"]!
-    }
-
+    
 }
 
 
-struct TextView: View {
+struct CVText: View {
     let model: CVTextModel
     
-    @State private var entry: String = ""
-
     var body: some View {
+
+        let _textStyle    = SwiftTextStyles  [model.textStyle  ?? ""] ?? SwiftTextStyles  ["body"]!
+        let _fontDesign   = SwiftFontDesigns [model.fontDesign ?? ""] ?? SwiftFontDesigns ["default"]!
+        
         Text("\(model.text)")
-            .font(.system(model._textStyle!, design: model._fontDesign!))
+            .font(.system(_textStyle, design: _fontDesign))
     }
 }
-
-//struct TextTemplate: CVElement {
-//    static func == (lhs: TextTemplate, rhs: TextTemplate) -> Bool {
-//        return false
-//    }
-//
-//    let id:     String?
-//    let model:  CVTextModel
-//
-//    func render() -> AnyView {
-//        return TextView(model: model).toAnyView()
-//    }
-//}
-
-
 
 
 struct TextViewDemo: View {

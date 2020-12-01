@@ -22,7 +22,7 @@ class CVFirestore: ObservableObject {
     @Published var elements: [String: CVElement] = [String: CVElement]()
 
     // Screen View Models
-    @Published var viewModels: [String: CVViewModel] = [String: CVViewModel]()
+    @Published var viewModels: [String: CVRootViewModel] = [String: CVRootViewModel]()
 
     /*
     ** Begins listening on screens
@@ -35,33 +35,39 @@ class CVFirestore: ObservableObject {
             
             querySnapshot?.documentChanges.forEach { diff in
 
-                print (diff.document.documentID)
+                let changed_doc_id = diff.document.documentID
+                //print (changed_doc_id)
 
                 do {
+
+                    // deserialize JSON into an abstract CVElement
                     let element = try diff.document.data(as: CVElement.self)
 
                     if (diff.type == .added && element != nil) {
-                        print("New: \(element!.id!)")
-                        self.loadElement(element: element!, id: diff.document.documentID)
+                        print("New: \(changed_doc_id)")
+                        self.loadElement(element: element!, id: changed_doc_id)
                     }
 
                     if (diff.type == .modified && element != nil) {
-                        print("Modified: \(element!.id!)")
-                        self.loadElement(element: element!, id: diff.document.documentID)
+                        print("Modified: \(changed_doc_id)")
+                        self.loadElement(element: element!, id: changed_doc_id)
                     }
 
                     if (diff.type == .removed) {
-                        print("Removed: \(element!.id!)")
-                        self.elements[element!.id!] = nil
+                        print("Removed: \(changed_doc_id)")
+                        self.elements[changed_doc_id] = nil
                     }
                 }
                 catch {
+                    // fake an error element with the message
                     print(error)
+                    let errorElement = CVElement (from: error, title: "\(changed_doc_id)")
+                    self.elements[changed_doc_id] = errorElement
+                    self.loadElement(element: errorElement, id: changed_doc_id)
                 }
             }
             
             self.afterUpdateProcessing()
-            
         }
         
     }
@@ -83,7 +89,7 @@ class CVFirestore: ObservableObject {
 
         var vm = self.viewModels[id]
         if vm == nil {
-            vm = CVViewModel(from: id)
+            vm = CVRootViewModel(from: id)
             self.viewModels[id] = vm
         }
 

@@ -8,48 +8,32 @@
 import Foundation
 import SwiftUI
 
-//protocol HasCodableModel { }
-//
-//enum TemplateType: String, Decodable {
-//    case text
-//    case textfield
-//    case chart
-//    case roundedImage
-//    case gradientBox
-//}
-//
-//extension HasCodableModel {
-//    func decodeModel(from container: KeyedDecodingContainer<ModelCodingKeys>) throws -> CodableModel? {
-//        if let modelType = try container.decodeIfPresent(String.self, forKey: .itemType) {
-//            switch modelType {
-//                case "text":            return try container.decode(CVTextModel.self,         forKey: .data)
-//                case "chart":           return try container.decode(ChartModel.self,        forKey: .data)
-//                case "textfield":       return try container.decode(TextfieldModel.self,    forKey: .data)
-//                case "gradientBox":     return try container.decode(GradientBoxModel.self,  forKey: .data)
-//                case "roundedImage":    return try container.decode(RoundedImageModel.self, forKey: .data)
-////                default: fatalError("Unknown model type: \(modelType).")
-//            default:                    return try container.decode(CVTextModel.self,         forKey: .data)
-//
-//            }
-//        } else {
-//            return nil
-//        }
-//    }
-//}
-//
-//enum ModelCodingKeys: String, CodingKey {
-//    case id
-//    case itemType
-//    case data
-//}
-//
-//protocol CodableModel: Decodable {
-//
-//}
-
 protocol viewable: Decodable {
     var uniqueId: UUID { get }
+    var content: [CVElement]? { get set }
 }
+
+extension viewable {
+    var uniqueId: UUID { UUID() }
+//    var content: [CVElement]? { [CVElement]() }
+
+    func renderContent(namespace: Namespace.ID) -> AnyView {
+        if content!.count == 0 { return ProgressView().toAnyView() }
+
+        let _: () = print("Content \(String(describing: content))")
+
+        return ForEach(content!, id: \.id) { element in
+            element.render()
+                .matchedGeometryEffect(id: element.id, in: namespace)
+        }.toAnyView()
+        
+    }
+
+}
+
+
+
+
 
 
 //protocol UITemplate {
@@ -64,34 +48,47 @@ protocol viewable: Decodable {
 
 
 struct CVElement: Identifiable, Decodable {
-    var id:             String? { "\(UUID())" }
     var uniqueId:       UUID  { UUID() }
-    
+
+    var id:             String? = ""
+    var title:          String? = ""
+   
+    var Error:          CVErrorModel? = nil
+
     var Text:           CVTextModel? = nil
     var Label:          CVLabelModel? = nil
 
+    var ZStack:         CVZStackModel? = nil
     var VStack:         CVVStackModel? = nil
     var List:           CVListModel? = nil
 
-    var content: [CVElement]? = [CVElement]()
+    //var content: [CVElement]? = [CVElement]()
+
 
     // builds a view matching the first viewable
     // TODO: find indirect way to return the corrosponding view
     func render() -> AnyView {
 
+        let data: viewable? = model()
         //print ("Model: \(String(describing: model()))");
         
-        if Text         != nil { return TextView        (model: Text!       ).toAnyView() }
-        if Label        != nil { return LabelView       (model: Label!      ).toAnyView() }
-        if VStack       != nil { return CVVStackView    (model: VStack!     ).toAnyView() }
-        if List         != nil { return CVListView      (model: List!       ).toAnyView() }
+        if Error        != nil { return CVError     (model: Error!      ).toAnyView() }
+        if Text         != nil { return CVText      (model: Text!       ).toAnyView() }
+        if Label        != nil { return CVLabel     (model: Label!      ).toAnyView() }
+        if ZStack       != nil { return CVZStack    (model: ZStack!     ).toAnyView() }
+        if VStack       != nil { return CVVStack    (model: VStack!     ).toAnyView() }
+        if List         != nil { return CVList      (model: List!       ).toAnyView() }
 
-        return SwiftUI.Text("no data").toAnyView()
+        if model() == nil {
+            return SwiftUI.Text("this element contains no data").toAnyView()
+        }
+        
+        return SwiftUI.Text("no view for \( String(describing: data))").toAnyView()
     }
     
 
     // uses reflection to return the first property that conforms to our viewable protocol
-    func model() -> viewable {
+    func model() -> viewable? {
         let mirror = Mirror(reflecting: self)
 
         for child in mirror.children {
@@ -100,16 +97,15 @@ struct CVElement: Identifiable, Decodable {
             }
         }
         
-        return CVTextModel(from: "no data")
+        return nil
     }
     
-    
-}
+    // creates a CVElement with an error message
+    init(from err: Error, title: String?) {
+        self.id     = "errorElement"
+        self.title  = title
+        self.Text   = CVTextModel(from: "Error: \(err) Description: \(err.localizedDescription)")
+    }
 
-
-
-struct SharedTemplate: Decodable {
-    let pageTitle: String
-    let templates: [CVElement]
 }
 

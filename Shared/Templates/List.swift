@@ -20,36 +20,17 @@ let SwiftListStyles: [String: Any] = [
 //let SwiftTextStyles2  = Font.TextStyle.allCases.reduce(into: [String: Font.TextStyle]()) { $0["\($1)"] = $1 }
 
 struct CVListModel: viewable {
-    var uniqueId: UUID
+    var content: [CVElement]?
     
     var listStyle:      String?
-    var _listStyle:     Any? = nil
-
-    var content: [CVElement]? = nil
-    
-    enum ListModelCodingKeys: String, CodingKey {
-        case style
-        case content
-    }
-    
-    init(from decoder: Decoder) throws {
-        uniqueId      = UUID()
-
-        let container = try decoder.container(keyedBy: ListModelCodingKeys.self)
-        listStyle     = try container.decodeIfPresent(String.self, forKey: .style)  ?? ""
-        _listStyle    = SwiftListStyles  [listStyle! ] ?? SwiftListStyles  ["plain"]!
-        content       = try container.decodeIfPresent([CVElement].self, forKey: .content)  ?? [CVElement]()
-    }
-
 }
 
 
-struct CVListView: View {
+struct CVList: View {
     let model: CVListModel
     @Namespace var listAnimation
 
     var body: some View {
-        let _: () = print("List style: \(String(describing: model._listStyle))")
         let _: () = print("List contents: \(String(describing: model.content))")
         
         List {
@@ -57,23 +38,13 @@ struct CVListView: View {
                 header: Text("Section"),
                 footer: Text("sfdf"),
                 content: {
-                    renderContent(content: model.content, namespace: listAnimation)
+                    model.renderContent(namespace: listAnimation)
                 }
             )
         }
         .listStyle (GroupedListStyle())
     }
 }
-
-//struct ListTemplate: CVElement {
-//   
-//    let id:     String?
-//    let model:  CVListModel
-//    
-//    func render() -> AnyView {
-//        return CVListView(model: model).toAnyView()
-//    }
-//}
 
 
 

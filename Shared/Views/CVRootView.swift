@@ -8,31 +8,49 @@
 import SwiftUI
 
 
-struct CVView: View {
-    @ObservedObject var vm: CVViewModel
+struct CVRootView: View {
 
+    @ObservedObject var vm: CVRootViewModel
+    
+    @State private var isError = false
+    @State private var error: Error?
+    
     @Namespace var rootAnimation
     
     var body: some View {
+        
+        let title = vm.element?.title ?? vm.element?.id ?? ""
+        
         ZStack {
-            renderContent(content: vm.element?.content, namespace: rootAnimation)
+            if vm.element == nil {
+                ProgressView()
+            }
+            else {
+                vm.element!.render()
+            }
         }
         .matchedGeometryEffect(id: vm.element?.id, in: rootAnimation)
+        .navigationTitle(title)
+        .alert(isPresented: $isError) {
+           Alert(title: Text(title),
+                 message: Text("Try changing the name"),
+                 dismissButton: .default(Text("OK")))
+       }
     }
 }
 
 class TemplateViewController: UIViewController {
 
-    @State private var vm: CVViewModel = CVViewModel(from: "Main")
+    @State private var vm: CVRootViewModel = CVRootViewModel(from: "Main")
    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let controller = UIHostingController(rootView: CVView(vm: vm))
+        let controller = UIHostingController(rootView: CVRootView(vm: vm))
         controller.view.translatesAutoresizingMaskIntoConstraints = false
         self.addChild(controller)
         self.view.addSubview(controller.view)
-        self.title = vm.title
+        self.title = vm.title ?? vm.element?.id ?? "title"
         controller.didMove(toParent: self)
         
         NSLayoutConstraint.activate([
@@ -52,6 +70,6 @@ class TemplateViewController: UIViewController {
 
 struct TemplateView_Previews: PreviewProvider {
     static var previews: some View {
-        CVView(vm: CVViewModel(from: "root"))
+        CVRootView(vm: CVRootViewModel(from: "root"))
     }
 }

@@ -10,15 +10,18 @@ import SwiftUI
 func buildFrom(json: String, async: Bool = false) -> AnyView {
 
     let jsonData    = json.data(using: .utf8)!
-    let vm          = CVViewModel(from: "root")
+    let vm          = CVRootViewModel(from: "root")
     
     do {
         let element = try JSONDecoder().decode(CVElement.self, from: jsonData)
         vm.load(element: element, async: async)
-        return CVView(vm:vm).toAnyView()
+        return CVRootView(vm:vm).toAnyView()
     }
+
     catch {
+        print("buildFrom() couldnt decode ya json")
         print(error)
+
         let s = "\(error)"
         return VStack {
             Text("an error")

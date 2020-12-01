@@ -29,13 +29,12 @@ struct ContentView: View {
         let _: () = print("building screen \(viewId)")
         
         // retrieve the current view model
-        let vm = cvCache.viewModels[viewId]
-
+        let vm = cvCache.viewModels[viewId] ?? cvCache.viewModels["error"]
         
         NavigationView {
 
             if vm != nil {
-                CVView(vm: vm!)
+                CVRootView(vm: vm!)
             }
             else {
                 ProgressView()

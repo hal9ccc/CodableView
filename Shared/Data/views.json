@@ -2,24 +2,29 @@
     "views": {
         "Main": {
             "id": "Main",
-            "content": [
-                { "List": {
-                    "style": "InsetGrouped",
-                    "content": [
-                        { "Label": {"of": "Rain",               "image": "cloud.sun.rain.fill"    } },
-                        { "Label": {"of": "Sun",                "image": "sun.max.fill"       } },
-                        { "Label": {"of": "Cloud",              "image": "cloud"         } },
-                        { "Label": {"of": "Last Label",         "image": "forward.end"        } }
-                    ]
-                } }
-            ]
+            "title": "Main Screen",
+            "VStack": {
+                "content": [
+                    { "List": {
+                        "style": "InsetGrouped",
+                        "content": [
+                            { "id": "Rain ",        "Label": {"text": "Rain ",              "image": "cloud.sun.rain.fill"    } },
+                            { "id": "Sun",          "Label": {"text": "Sun",                "image": "sun.max.fill"           } },
+                            { "id": "Sun+Cloud",    "Label": {"text": "Sun+Cloud",          "image": "cloud.sun.fill"         } },
+                            { "id": "Cloud",        "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
+                            { "id": "Snow",         "Label": {"text": "Snow",               "image": "cloud.snow.fill"        } }
+                        ]
+                    } }
+                ]
+            }
         },
         "VStackDemo": {
             "id": "VStackDemo",
+            "title": "VStack Demo",
             "content": [
                 { "VStack": {
                     "content": [
-                        { "Text": {"of": "largeTitle fgffg ",                 "style": "largeTitle"    } },
+                        { "Text": {"of": "largeTitle",                 "style": "largeTitle"    } },
                         { "Text": {"of": "title",                      "style": "title"         } },
                         { "Text": {"of": "headline",                   "style": "headline"      } },
                         { "Text": {"of": "subheadline",                "style": "subheadline"   } },

@@ -12,7 +12,9 @@ import Shapes
 import Charts
 
 struct ChartModel: viewable {
-    var uniqueId: UUID
+  
+//    var uniqueId: UUID
+    var content: [CVElement]?
     
     let name: String
 }

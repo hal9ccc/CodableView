@@ -7,47 +7,32 @@
 
 import SwiftUI
 
-struct CVVStackModel: viewable {
+struct CVZStackModel: viewable {
     var content: [CVElement]?
-    
-//    var uniqueId:       UUID { UUID() }
-    
-//    var content: [CVElement]? = nil
-    
-//    enum keys: String, CodingKey {
-//        case content
-//    }
-//
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: keys.self)
-//        uniqueId      = UUID()
-//        content       = try container.decodeIfPresent([CVElement].self, forKey: .content)  ?? [CVElement]()
-//    }
-
 }
 
 
-struct CVVStack: View {
-    let model: CVVStackModel
-    @Namespace var vStackAnimation
+struct CVZStack: View {
+    let model: CVZStackModel
+    @Namespace var ZStackAnimation
 
     var body: some View {
-        let _: () = print("VStack")
-        let _: () = print("contents: \(String(describing: model.content))")
+//        let _: () = print("VStack")
+//        let _: () = print("contents: \(String(describing: model.content))")
         
-        VStack {
-            model.renderContent(namespace: vStackAnimation)
+        ZStack {
+            model.renderContent(namespace: ZStackAnimation)
         }
     }
 }
 
-struct VStackDemo: View {
+struct ZStackDemo: View {
    
     var body: some View { buildFrom(json: """
         {
             "title": "List Preview",
             "content": [
-                { "List": { "content": [
+                { "ZStack": { "content": [
                     { "Text": {"text": "largeTitle",                 "textStyle": "largeTitle"    } },
                     { "Text": {"text": "title",                      "textStyle": "title"         } },
                     { "Text": {"text": "headline",                   "textStyle": "headline"      } },
@@ -69,8 +54,8 @@ struct VStackDemo: View {
 }
 
 
-struct VStackView_Previews: PreviewProvider {
+struct ZStackView_Previews: PreviewProvider {
     static var previews: some View {
-         VStackDemo()
+         ZStackDemo()
     }
 }
