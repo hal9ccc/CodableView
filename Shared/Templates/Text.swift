@@ -22,7 +22,7 @@ struct CVTextModel: viewable {
     var content: [CVElement]?
 
     var text:           String
-    var textStyle:      String?
+    var style:          String?
     var fontDesign:     String?
 
     enum TextModelCodingKeys: String, CodingKey {
@@ -42,7 +42,7 @@ struct CVText: View {
     
     var body: some View {
 
-        let _textStyle    = SwiftTextStyles  [model.textStyle  ?? ""] ?? SwiftTextStyles  ["body"]!
+        let _textStyle    = SwiftTextStyles  [model.style  ?? ""] ?? SwiftTextStyles  ["body"]!
         let _fontDesign   = SwiftFontDesigns [model.fontDesign ?? ""] ?? SwiftFontDesigns ["default"]!
         
         Text("\(model.text)")

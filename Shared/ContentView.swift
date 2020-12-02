@@ -15,8 +15,8 @@ struct ContentView: View {
 
     // screenManager provides us with screen data and updates
     //
-    @ObservedObject var cvCache : CVFirestore
-
+    //@ObservedObject var cvCache : CVFirestore
+    @EnvironmentObject var cvCache : CVFirestore
 
 //    @FetchRequest(
 //        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
@@ -29,17 +29,25 @@ struct ContentView: View {
         let _: () = print("building screen \(viewId)")
         
         // retrieve the current view model
-        let vm = cvCache.viewModels[viewId] ?? cvCache.viewModels["error"]
+        let vm1 = cvCache.viewModels[viewId] ?? cvCache.viewModels["error"]
+        let vm2 = cvCache.viewModels["LabelDemo"] ?? cvCache.viewModels["error"]
         
         NavigationView {
 
-            if vm != nil {
-                CVRootView(vm: vm!)
+            if vm1 != nil {
+                CVRootView(vm: vm1!)
             }
             else {
                 ProgressView()
             }
 
+
+            if vm2 != nil {
+                CVRootView(vm: vm2!)
+            }
+            else {
+                ProgressView()
+            }
 
         }
         .toolbar {
@@ -51,7 +59,7 @@ struct ContentView: View {
 //                Label("Add Item", systemImage: "plus")
 //            }
         }
-
+        
         let _: () = print("view built")
     }
 
@@ -96,7 +104,7 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewId: "TextDemo", cvCache: CVFirestore())
+        ContentView(viewId: "TextDemo")
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

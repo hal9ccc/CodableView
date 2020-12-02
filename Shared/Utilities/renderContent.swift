@@ -16,7 +16,7 @@ func renderContent(content: [CVElement]?, namespace: Namespace.ID) -> AnyView {
     return ForEach(content!, id: \.uniqueId) { element in
         //let _: () = print("renderContent id: \(String(describing: element.id)): \(String(describing: element))")
         element.render()
-            //.matchedGeometryEffect(id: element.id, in: namespace)
+//            .matchedGeometryEffect(id: element.autoId(), in: namespace)
     }.toAnyView()
     
 }

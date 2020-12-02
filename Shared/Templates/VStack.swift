@@ -48,17 +48,17 @@ struct VStackDemo: View {
             "title": "List Preview",
             "content": [
                 { "List": { "content": [
-                    { "Text": {"text": "largeTitle",                 "textStyle": "largeTitle"    } },
-                    { "Text": {"text": "title",                      "textStyle": "title"         } },
-                    { "Text": {"text": "headline",                   "textStyle": "headline"      } },
-                    { "Text": {"text": "subheadline",                "textStyle": "subheadline"   } },
-                    { "Text": {"text": "body",                       "textStyle": "body"          } },
-                    { "Text": {"text": "callout",                    "textStyle": "callout"       } },
-                    { "Text": {"text": "footnote",                   "textStyle": "footnote"      } },
-                    { "Text": {"text": "caption",                    "textStyle": "caption"       } },
-                    { "Text": {"text": "title serif",                "textStyle": "title"         , "fontDesign": "serif"} },
-                    { "Text": {"text": "title rounded",              "textStyle": "title"         , "fontDesign": "rounded"} },
-                    { "Text": {"text": "title monospaced",           "textStyle": "title"         , "fontDesign": "monospaced"} }
+                    { "Text": {"text": "largeTitle",                 "style": "largeTitle"    } },
+                    { "Text": {"text": "title",                      "style": "title"         } },
+                    { "Text": {"text": "headline",                   "style": "headline"      } },
+                    { "Text": {"text": "subheadline",                "style": "subheadline"   } },
+                    { "Text": {"text": "body",                       "style": "body"          } },
+                    { "Text": {"text": "callout",                    "style": "callout"       } },
+                    { "Text": {"text": "footnote",                   "style": "footnote"      } },
+                    { "Text": {"text": "caption",                    "style": "caption"       } },
+                    { "Text": {"text": "title serif",                "style": "title"         , "fontDesign": "serif"} },
+                    { "Text": {"text": "title rounded",              "style": "title"         , "fontDesign": "rounded"} },
+                    { "Text": {"text": "title monospaced",           "style": "title"         , "fontDesign": "monospaced"} }
                 ] } }
             ]
         }

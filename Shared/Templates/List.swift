@@ -23,6 +23,8 @@ struct CVListModel: viewable {
     var content: [CVElement]?
     
     var listStyle:      String?
+    var header:         CVTextModel?
+    var footer:         CVTextModel?
 }
 
 
@@ -32,11 +34,13 @@ struct CVList: View {
 
     var body: some View {
         let _: () = print("List contents: \(String(describing: model.content))")
+        let headerElement: CVElement = CVElement (from: model.header)
+        let footerElement: CVElement = CVElement (from: model.footer)
         
         List {
             Section (
-                header: Text("Section"),
-                footer: Text("sfdf"),
+                header: headerElement.render(),
+                footer: footerElement.render(),
                 content: {
                     model.renderContent(namespace: listAnimation)
                 }

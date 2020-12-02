@@ -15,7 +15,12 @@ protocol viewable: Decodable {
 
 extension viewable {
     var uniqueId: UUID { UUID() }
-//    var content: [CVElement]? { [CVElement]() }
+
+    func autoId() -> String {
+        let f = String(describing: self)
+        print ("autoId::generic: \(f)")
+        return f
+    }
 
     func renderContent(namespace: Namespace.ID) -> AnyView {
         if content!.count == 0 { return ProgressView().toAnyView() }
@@ -23,6 +28,8 @@ extension viewable {
         let _: () = print("Content \(String(describing: content))")
 
         return ForEach(content!, id: \.id) { element in
+//            let _: () = print("id \(element.id ?? "null")")
+//            let _: () = print("autoId \(element.autoId())")
             element.render()
                 .matchedGeometryEffect(id: element.id, in: namespace)
         }.toAnyView()
@@ -30,22 +37,6 @@ extension viewable {
     }
 
 }
-
-
-
-
-
-
-//protocol UITemplate {
-//    var uniqueId: UUID { get }
-//    func render() -> AnyView
-//}
-//
-//extension UITemplate {
-//    var id: String { "\(UUID())" }
-//    var uniqueId: UUID { UUID() }
-//}
-
 
 struct CVElement: Identifiable, Decodable {
     var uniqueId:       UUID  { UUID() }
@@ -57,13 +48,19 @@ struct CVElement: Identifiable, Decodable {
 
     var Text:           CVTextModel? = nil
     var Label:          CVLabelModel? = nil
+    var NavigationLink: CVNavigationLinkModel? = nil
 
     var ZStack:         CVZStackModel? = nil
     var VStack:         CVVStackModel? = nil
     var List:           CVListModel? = nil
 
-    //var content: [CVElement]? = [CVElement]()
+    func autoId() -> String {
+        let f = id ?? model()?.autoId() ?? String(describing: self)
+        print ("autoId(\(uniqueId)) \(f)");
+        return f
+    }
 
+    //var content: [CVElement]? = [CVElement]()
 
     // builds a view matching the first viewable
     // TODO: find indirect way to return the corrosponding view
@@ -72,12 +69,15 @@ struct CVElement: Identifiable, Decodable {
         let data: viewable? = model()
         //print ("Model: \(String(describing: model()))");
         
-        if Error        != nil { return CVError     (model: Error!      ).toAnyView() }
-        if Text         != nil { return CVText      (model: Text!       ).toAnyView() }
-        if Label        != nil { return CVLabel     (model: Label!      ).toAnyView() }
-        if ZStack       != nil { return CVZStack    (model: ZStack!     ).toAnyView() }
-        if VStack       != nil { return CVVStack    (model: VStack!     ).toAnyView() }
-        if List         != nil { return CVList      (model: List!       ).toAnyView() }
+        if Error            != nil { return CVError            (model: Error!            ).toAnyView() }
+        if Text             != nil { return CVText             (model: Text!             ).toAnyView() }
+        if Label            != nil { return CVLabel            (model: Label!            ).toAnyView() }
+
+        if NavigationLink   != nil { return CVNavigationLink   (model: NavigationLink!   ).toAnyView() }
+
+        if ZStack           != nil { return CVZStack           (model: ZStack!           ).toAnyView() }
+        if VStack           != nil { return CVVStack           (model: VStack!           ).toAnyView() }
+        if List             != nil { return CVList             (model: List!             ).toAnyView() }
 
         if model() == nil {
             return SwiftUI.Text("this element contains no data").toAnyView()
@@ -105,6 +105,12 @@ struct CVElement: Identifiable, Decodable {
         self.id     = "errorElement"
         self.title  = title
         self.Text   = CVTextModel(from: "Error: \(err) Description: \(err.localizedDescription)")
+    }
+
+    // creates a CVElement with a Text model
+    init(from text: CVTextModel?) {
+        self.id     = "textElement"
+        self.Text   = text ?? CVTextModel(from:"")
     }
 
 }

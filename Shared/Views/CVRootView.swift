@@ -29,7 +29,7 @@ struct CVRootView: View {
                 vm.element!.render()
             }
         }
-        .matchedGeometryEffect(id: vm.element?.id, in: rootAnimation)
+//        .matchedGeometryEffect(id: vm.element?.id, in: rootAnimation)
         .navigationTitle(title)
         .alert(isPresented: $isError) {
            Alert(title: Text(title),
