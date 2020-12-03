@@ -1,29 +1,29 @@
 //
-//  VStack.swift
+//  HStack.swift
 //  CodableViewDemo
 //
-//  Created by Matthias Schulze on 25.11.20.
+//  Created by Matthias Schulze on 03.12.20.
 //
 
 import SwiftUI
 
-struct CVVStackModel: viewable {
+struct CVHStackModel: viewable {
     var content: [CVElement]?
 }
 
 
-struct CVVStack: View {
-    let model: CVVStackModel
-    @Namespace var VStackAnimation
+struct CVHStack: View {
+    let model: CVHStackModel
+    @Namespace var HStackAnimation
 
     var body: some View {
-        VStack {
-            model.renderContent(namespace: VStackAnimation)
+        HStack {
+            model.renderContent(namespace: HStackAnimation)
         }
     }
 }
 
-struct VStackDemo: View {
+struct HStackDemo: View {
    
     var body: some View { buildFrom(json: """
         {
@@ -51,8 +51,8 @@ struct VStackDemo: View {
 }
 
 
-struct VStackView_Previews: PreviewProvider {
+struct HStackView_Previews: PreviewProvider {
     static var previews: some View {
-         VStackDemo()
+         HStackDemo()
     }
 }

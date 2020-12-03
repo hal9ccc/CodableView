@@ -56,6 +56,10 @@
 		4E3ACDA4256848BF00767BA6 /* GradientBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD9B256848BF00767BA6 /* GradientBox.swift */; };
 		4E3ACDA5256848BF00767BA6 /* GradientBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD9B256848BF00767BA6 /* GradientBox.swift */; };
 		4E4EC06A25682CC2003B08F3 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 4E4EC06925682CC2003B08F3 /* Charts */; };
+		4E66943D25795ADC0072DEE0 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E66943C25795ADC0072DEE0 /* Section.swift */; };
+		4E66943E25795ADC0072DEE0 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E66943C25795ADC0072DEE0 /* Section.swift */; };
+		4E66944225796A5D0072DEE0 /* HStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E66944125796A5D0072DEE0 /* HStack.swift */; };
+		4E66944325796A5D0072DEE0 /* HStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E66944125796A5D0072DEE0 /* HStack.swift */; };
 		4E6E76E125681FD1009F9892 /* CodableViewDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E6E76CB25681FCF009F9892 /* CodableViewDemo.xcdatamodeld */; };
 		4E6E76E225681FD1009F9892 /* CodableViewDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E6E76CB25681FCF009F9892 /* CodableViewDemo.xcdatamodeld */; };
 		4E6E76E325681FD1009F9892 /* CodableViewDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6E76CD25681FCF009F9892 /* CodableViewDemoApp.swift */; };
@@ -110,6 +114,8 @@
 		4E3ACD99256848BF00767BA6 /* RoundedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
 		4E3ACD9A256848BF00767BA6 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		4E3ACD9B256848BF00767BA6 /* GradientBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientBox.swift; sourceTree = "<group>"; };
+		4E66943C25795ADC0072DEE0 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		4E66944125796A5D0072DEE0 /* HStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStack.swift; sourceTree = "<group>"; };
 		4E6E76CC25681FCF009F9892 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		4E6E76CD25681FCF009F9892 /* CodableViewDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableViewDemoApp.swift; sourceTree = "<group>"; };
 		4E6E76CE25681FCF009F9892 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -225,6 +231,8 @@
 				4E81DDA62574D84D007DC026 /* ZStack.swift */,
 				4E046A2125766DB900E4CDD1 /* NavigationLink.swift */,
 				4E046A262577C4FD00E4CDD1 /* Form.swift */,
+				4E66943C25795ADC0072DEE0 /* Section.swift */,
+				4E66944125796A5D0072DEE0 /* HStack.swift */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -519,6 +527,8 @@
 				4E1D99BD25714AEF00026C73 /* buildFrom.swift in Sources */,
 				4E3ACD592568488A00767BA6 /* Dictionary+Extensions.swift in Sources */,
 				4E3ACD7D256848B300767BA6 /* CVRootView.swift in Sources */,
+				4E66944225796A5D0072DEE0 /* HStack.swift in Sources */,
+				4E66943D25795ADC0072DEE0 /* Section.swift in Sources */,
 				4EBC9F3B2571B272008716EA /* Label.swift in Sources */,
 				4E3ACDA4256848BF00767BA6 /* GradientBox.swift in Sources */,
 				4E6E76E325681FD1009F9892 /* CodableViewDemoApp.swift in Sources */,
@@ -559,6 +569,8 @@
 				4E1D99BE25714AEF00026C73 /* buildFrom.swift in Sources */,
 				4E3ACD5A2568488A00767BA6 /* Dictionary+Extensions.swift in Sources */,
 				4E3ACD7E256848B300767BA6 /* CVRootView.swift in Sources */,
+				4E66944325796A5D0072DEE0 /* HStack.swift in Sources */,
+				4E66943E25795ADC0072DEE0 /* Section.swift in Sources */,
 				4EBC9F3C2571B272008716EA /* Label.swift in Sources */,
 				4E3ACDA5256848BF00767BA6 /* GradientBox.swift in Sources */,
 				4E6E76E425681FD1009F9892 /* CodableViewDemoApp.swift in Sources */,

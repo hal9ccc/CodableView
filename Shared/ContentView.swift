@@ -29,9 +29,10 @@ struct ContentView: View {
         let _: () = print("building screen \(viewId)")
         
         // retrieve the current view model
-        let vm1 = cvCache.viewModels[viewId] ?? cvCache.viewModels["error"]
-        let vm2 = cvCache.viewModels["LabelDemo"] ?? cvCache.viewModels["error"]
-        
+        let vm1 = cvCache.viewModels[viewId]
+        let vm2 = cvCache.viewModels["ListDemo"]
+        let vm3 = cvCache.viewModels["ListDemo2"]
+
         NavigationView {
 
             if vm1 != nil {
@@ -41,7 +42,6 @@ struct ContentView: View {
                 ProgressView()
             }
 
-
             if vm2 != nil {
                 CVRootView(vm: vm2!)
             }
@@ -49,7 +49,9 @@ struct ContentView: View {
                 ProgressView()
             }
 
+
         }
+        .navigationBarTitleDisplayMode(.automatic)
         .toolbar {
             #if os(iOS)
             EditButton()

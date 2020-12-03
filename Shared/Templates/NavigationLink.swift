@@ -23,12 +23,16 @@ struct CVNavigationLinkModel: viewable {
 
 struct CVNavigationLink: View {
     let model: CVNavigationLinkModel
-    
+
+    @EnvironmentObject var cvCache : CVFirestore
+   
     var body: some View {
         //let _: () = print("Label: '\(String(describing: model.text))'")
         //var renderingMode: TemplateRenderingMode = .original
 
-        NavigationLink (destination: ContentView(viewId: model.destinationViewId)) {
+        let vm = cvCache.viewModels[model.destinationViewId]
+
+        NavigationLink ( destination: CVRootView ( vm: vm! )) {
             Text(model.text)
         }
 

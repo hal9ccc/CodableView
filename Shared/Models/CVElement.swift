@@ -52,6 +52,11 @@ struct CVElement: Identifiable, Decodable {
 
     var ZStack:         CVZStackModel? = nil
     var VStack:         CVVStackModel? = nil
+    var HStack:         CVHStackModel? = nil
+
+    var Section:        CVSectionModel? = nil
+    var Form:           CVFormModel? = nil
+
     var List:           CVListModel? = nil
 
     func autoId() -> String {
@@ -77,6 +82,13 @@ struct CVElement: Identifiable, Decodable {
 
         if ZStack           != nil { return CVZStack           (model: ZStack!           ).toAnyView() }
         if VStack           != nil { return CVVStack           (model: VStack!           ).toAnyView() }
+        if HStack           != nil { return CVHStack           (model: HStack!           ).toAnyView() }
+        
+        if Section          != nil { return CVSection          (model: Section!          ).toAnyView() }
+        if Form             != nil { return CVForm             (model: Form!             ).toAnyView() }
+
+        
+        
 //        if List             != nil { return CVList             (model: List!             ).toAnyView() }
 
  

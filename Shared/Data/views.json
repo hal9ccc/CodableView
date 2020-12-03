@@ -7,7 +7,7 @@
                 "content": [
                     { "List": {
                         "id": "list",
-                        "style": "insetGrouped",
+                        "style": "inset",
                         "header": {"text": "Demo ", "style": "caption"      },
                         "footer": {"text": "List elements are automatically animated for insertion, removal and also order changes, provided they have distinct IDs", "style": "footnote" },
                         "content": [
@@ -63,15 +63,57 @@
             "id": "ListDemo",
             "title": "List",
             "List": {
-                "style": "Plainss",
-                "header": {"text": "A container that presents rows of data arranged in a single column.", "style": "caption"      },
-                "footer": {"text": "List elements are automatically animated for insertion, removal and also order changes, provided they have distinct IDs", "style": "footnote" },
+                "id":"l1",
+                "style": "insetGrouped",
                 "content": [
-                    { "id": "Sun",          "Label": {"text": "Sun",                "image": "sun.max.fill"           } },
-                    { "id": "Rain ",        "Label": {"text": "Rain ",              "image": "cloud.sun.rain.fill"    } },
-                    { "id": "Sun+Cloud",    "Label": {"text": "Sun+Cloud",          "image": "cloud.sun.fill"         } },
-                    { "id": "Cloud",        "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
-                    { "id": "Snow",         "Label": {"text": "Snow",               "image": "cloud.snow.fill"        } }
+                    { "id": "Sun2",         "Label": {"text": "Sun",                "image": "sun.max.fill"           } },
+                    { "id": "Sun+Cloud2",   "Label": {"text": "Sun+Cloud",          "image": "cloud.sun.fill"         } },
+                    { "id": "Rain2",        "Label": {"text": "Rain ",              "image": "cloud.sun.rain.fill"    } },
+                    { "id": "Cloud2",       "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
+                    { "id": "Snow2",        "Label": {"text": "Snow",               "image": "cloud.snow.fill"        } }
+                ]
+            }
+        },
+        "ListDemo2": {
+            "id": "ListDemo2",
+            "title": "List",
+            "List": {
+                "id":"l2",
+                "style": "insetGrouped",
+                "content": [
+                    { "id": "Sun2",         "Label": {"text": "Sun",                "image": "sun.max.fill"           } },
+                    { "id": "Sun+Cloud2",   "Label": {"text": "Sun+Cloud",          "image": "cloud.sun.fill"         } },
+                    { "id": "Sune+Cloud2",   "Label": {"text": "Sun+Cloud",          "image": "cloud.sun.fill"         } },
+                    { "id": "Raien2",        "Label": {"text": "Rain ",              "image": "cloud.sun.rain.fill"    } },
+                    { "id": "Cloccud2",       "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
+                    { "id": "Sundc+Cloud2",   "Label": {"text": "Sun+Cloud",          "image": "cloud.sun.fill"         } },
+                    { "id": "Raidcn2",        "Label": {"text": "Rain ",              "image": "cloud.sun.rain.fill"    } },
+                    { "id": "Clocddud2",       "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
+                    { "id": "Raicdn2",        "Label": {"text": "Rain ",              "image": "cloud.sun.rain.fill"    } },
+                    { "id": "Clodcud2",       "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
+                    { "id": "Snowxcaxc2",        "Label": {"text": "Snow",               "image": "cloud.snow.fill"        } }
+                ]
+            }
+        },
+        "SectionDemo": {
+            "id": "SectionDemo",
+            "title": "List",
+            "List": {
+                "id":"l1",
+                "style": "plain",
+                "content": [
+                    {"Section": {
+                        "id":"s1",
+                        "header": { "text": "sdfsgs", "style": "footnote"  },
+                        "footer": { "text": "style = insetGrouped", "style": "footnote" },
+                        "content": [
+                            { "id": "Sun2",         "Label": {"text": "Sun",                "image": "sun.max.fill"           } },
+                            { "id": "Sun+Cloud2",   "Label": {"text": "Sun+Cloud",          "image": "cloud.sun.fill"         } },
+                            { "id": "Rain2",        "Label": {"text": "Rain ",              "image": "cloud.sun.rain.fill"    } },
+                            { "id": "Cloud2",       "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
+                            { "id": "Snow2",        "Label": {"text": "Snow",               "image": "cloud.snow.fill"        } }
+                        ]
+                    } }
                 ]
             }
         },
@@ -79,18 +121,16 @@
             "id": "FormDemo",
             "title": "Form",
             "Form": {
-                "header": {"text": "A container that presents rows of data arranged in a single column.", "style": "caption"      },
-                "footer": {"text": "List elements are automatically animated for insertion, removal and also order changes, provided they have distinct IDs", "style": "footnote" },
                 "content": [
-                    { "id": "Sun",          "Label": {"text": "Sun",                "image": "sun.max.fill"           } },
-                    { "id": "Rain ",        "Label": {"text": "Rain ",              "image": "cloud.sun.rain.fill"    } },
-                    { "id": "Sun+Cloud",    "Label": {"text": "Sun+Cloud",          "image": "cloud.sun.fill"         } },
-                    { "id": "Cloud",        "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
-                    { "id": "Snow",         "Label": {"text": "Snow",               "image": "cloud.snow.fill"        } }
+                    { "id": "FormSun",          "Label": {"text": "Sun",                "image": "sun.max.fill"           } },
+                    { "id": "FormSun+Cloud",    "Label": {"text": "Sun+Cloud",          "image": "cloud.sun.fill"         } },
+                    { "id": "FormCloud",        "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
+                    { "id": "FormRain ",        "Label": {"text": "Rain ",              "image": "cloud.sun.rain.fill"    } },
+                    { "id": "FormSnow",         "Label": {"text": "Snow",               "image": "cloud.snow.fill"        } }
                 ]
             }
         }
-       
-        
+
+
     }
 }

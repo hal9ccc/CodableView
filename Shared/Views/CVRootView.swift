@@ -21,7 +21,7 @@ struct CVRootView: View {
         
         let title = vm.element?.title ?? vm.element?.id ?? ""
         
-        ZStack {
+        Group {
             if vm.element == nil {
                 ProgressView()
             }
