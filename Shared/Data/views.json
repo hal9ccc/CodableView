@@ -6,40 +6,24 @@
             "VStack": {
                 "content": [
                     { "List": {
-                        "id": "list2",
-                        "style": "InsetGrouped",
+                        "id": "list",
+                        "style": "insetGrouped",
+                        "header": {"text": "Demo ", "style": "caption"      },
+                        "footer": {"text": "List elements are automatically animated for insertion, removal and also order changes, provided they have distinct IDs", "style": "footnote" },
                         "content": [
-                            { "id": "link_1",           "NavigationLink": {"text": "Text Demo",                  "destinationViewId": "TextDemo"     ,"navigationTitle": "TextDemo"   } },
-                            { "id": "link_2",           "NavigationLink": {"text": "VStack Demo",                "destinationViewId": "VStackDemo"   ,"navigationTitle": "VStackDemo" } },
-                            { "id": "link_3",           "NavigationLink": {"text": "Label Demo",                 "destinationViewId": "LabelDemo"    ,"navigationTitle": "LabelDemo"  } }
+                            { "id": "link_1",           "NavigationLink": {"text": "VStack",                "destinationViewId": "VStackDemo"   ,"navigationTitle": "VStackDemo" } },
+                            { "id": "link_2",           "NavigationLink": {"text": "List",                  "destinationViewId": "ListDemo"     ,"navigationTitle": "ListDemo"   } },
+                            { "id": "link_3",           "NavigationLink": {"text": "Form",                  "destinationViewId": "FormDemo"     ,"navigationTitle": "FormDemo"   } },
+
+                            { "id": "link_999",         "NavigationLink": {"text": "Text Demo",             "destinationViewId": "TextDemo"     ,"navigationTitle": "TextDemo"   } }
                         ]
                     } }
                 ]
             }
         },
-        "VStackDemo": {
-            "id": "VStackDemo",
-            "title": "VStack Demo",
-            "VStack": {
-                "content": [
-                    { "id":"largeTitle",          "Text": {"text": "largeTitle",                 "style": "largeTitle"    } },
-                    { "id":"title",               "Text": {"text": "title",                      "style": "title"         } },
-                    { "id":"headline",            "Text": {"text": "headline",                   "style": "headline"      } },
-                    { "id":"subheadline",         "Text": {"text": "subheadline",                "style": "subheadline"   } },
-                    { "id":"body",                "Text": {"text": "body",                       "style": "body"          } },
-                    { "id":"callout",             "Text": {"text": "callout",                    "style": "callout"       } },
-                    { "id":"footnote",            "Text": {"text": "footnote",                   "style": "footnote"      } },
-                    { "id":"caption",             "Text": {"text": "caption",                    "style": "caption"       } },
-                    { "id":"title serif",         "Text": {"text": "title serif",                "style": "title"         , "fontDesign": "serif"} },
-                    { "id":"title rounded",       "Text": {"text": "title rounded",              "style": "title"         , "fontDesign": "rounded"} },
-                    { "id":"title monospaced",    "Text": {"text": "title monospaced",           "style": "title"         , "fontDesign": "monospaced"} }
-                ]
-            }
-        },
         "TextDemo": {
             "id": "TextDemo",
-            "id": "Main",
-            "title": "Text Demo",
+            "title": "Text",
             "VStack": {
                 "content": [
                      { "id":"largeTitle",       "Text": {"text": "largeTitle",                 "style": "largeTitle"    } },
@@ -56,18 +40,52 @@
                 ]
             }
         },
-        "LabelDemo": {
-            "id": "LabelDemo",
+        "VStackDemo": {
+            "id": "VStackDemo",
+            "title": "VStack",
+            "VStack": {
+                "content": [
+                    { "id":"largeTitle",          "Text": {"text": "largeTitle",                 "style": "largeTitle"    } },
+                    { "id":"title",               "Text": {"text": "title",                      "style": "title"         } },
+                    { "id":"headline",            "Text": {"text": "headline",                   "style": "headline"      } },
+                    { "id":"subheadline",         "Text": {"text": "subheadline",                "style": "subheadline"   } },
+                    { "id":"body",                "Text": {"text": "body",                       "style": "body"          } },
+                    { "id":"callout",             "Text": {"text": "callout",                    "style": "callout"       } },
+                    { "id":"footnote",            "Text": {"text": "footnote",                   "style": "footnote"      } },
+                    { "id":"caption",             "Text": {"text": "caption",                    "style": "caption"       } },
+                    { "id":"title serif",         "Text": {"text": "title serif",                "style": "title"         , "fontDesign": "serif"} },
+                    { "id":"title rounded",       "Text": {"text": "title rounded",              "style": "title"         , "fontDesign": "rounded"} },
+                    { "id":"title monospaced",    "Text": {"text": "title monospaced",           "style": "title"         , "fontDesign": "monospaced"} }
+                ]
+            }
+        },
+        "ListDemo": {
+            "id": "ListDemo",
             "title": "List",
             "List": {
-                "style": "InsetGrouped",
+                "style": "Plainss",
                 "header": {"text": "A container that presents rows of data arranged in a single column.", "style": "caption"      },
                 "footer": {"text": "List elements are automatically animated for insertion, removal and also order changes, provided they have distinct IDs", "style": "footnote" },
                 "content": [
                     { "id": "Sun",          "Label": {"text": "Sun",                "image": "sun.max.fill"           } },
-                    { "id": "Cloud",        "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
                     { "id": "Rain ",        "Label": {"text": "Rain ",              "image": "cloud.sun.rain.fill"    } },
                     { "id": "Sun+Cloud",    "Label": {"text": "Sun+Cloud",          "image": "cloud.sun.fill"         } },
+                    { "id": "Cloud",        "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
+                    { "id": "Snow",         "Label": {"text": "Snow",               "image": "cloud.snow.fill"        } }
+                ]
+            }
+        },
+        "FormDemo": {
+            "id": "FormDemo",
+            "title": "Form",
+            "Form": {
+                "header": {"text": "A container that presents rows of data arranged in a single column.", "style": "caption"      },
+                "footer": {"text": "List elements are automatically animated for insertion, removal and also order changes, provided they have distinct IDs", "style": "footnote" },
+                "content": [
+                    { "id": "Sun",          "Label": {"text": "Sun",                "image": "sun.max.fill"           } },
+                    { "id": "Rain ",        "Label": {"text": "Rain ",              "image": "cloud.sun.rain.fill"    } },
+                    { "id": "Sun+Cloud",    "Label": {"text": "Sun+Cloud",          "image": "cloud.sun.fill"         } },
+                    { "id": "Cloud",        "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
                     { "id": "Snow",         "Label": {"text": "Snow",               "image": "cloud.snow.fill"        } }
                 ]
             }

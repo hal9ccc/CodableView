@@ -8,13 +8,6 @@
 import SwiftUI
 
 
-let SwiftListStyles: [String: Any] = [
-    "plain":            PlainListStyle(),
-    "inset":            InsetListStyle(),
-    "InsetGrouped":     InsetGroupedListStyle(),
-    "grouped":          GroupedListStyle(),
-//  "elliptical":       EllipticalListStyle
-]
 
 // Map Iterable Enum to Dictionary so the elements can be accessed by name
 //let SwiftTextStyles2  = Font.TextStyle.allCases.reduce(into: [String: Font.TextStyle]()) { $0["\($1)"] = $1 }
@@ -22,21 +15,63 @@ let SwiftListStyles: [String: Any] = [
 struct CVListModel: viewable {
     var content: [CVElement]?
     
-    var listStyle:      String?
+    var style:          String?
     var header:         CVTextModel?
     var footer:         CVTextModel?
 }
 
 
-struct CVList: View {
+struct CVDefaultList: View {
     let model: CVListModel
     @Namespace var listAnimation
 
     var body: some View {
-        let _: () = print("List contents: \(String(describing: model.content))")
         let headerElement: CVElement = CVElement (from: model.header)
         let footerElement: CVElement = CVElement (from: model.footer)
-        
+
+        List {
+            Section (
+                header: headerElement.render(),
+                footer: footerElement.render(),
+                content: {
+                    model.renderContent(namespace: listAnimation)
+                }
+            )
+        }
+        .listStyle (DefaultListStyle())
+    }
+}
+
+struct CVPlainList: View {
+    let model: CVListModel
+    @Namespace var listAnimation
+
+    var body: some View {
+        let headerElement: CVElement = CVElement (from: model.header)
+        let footerElement: CVElement = CVElement (from: model.footer)
+
+        List {
+            Section (
+                header: headerElement.render(),
+                footer: footerElement.render(),
+                content: {
+                    model.renderContent(namespace: listAnimation)
+                }
+            )
+        }
+        .listStyle (PlainListStyle())
+    }
+}
+
+
+struct CVGroupedList: View {
+    let model: CVListModel
+    @Namespace var listAnimation
+
+    var body: some View {
+        let headerElement: CVElement = CVElement (from: model.header)
+        let footerElement: CVElement = CVElement (from: model.footer)
+
         List {
             Section (
                 header: headerElement.render(),
@@ -50,6 +85,89 @@ struct CVList: View {
     }
 }
 
+struct CVInsetList: View {
+    let model: CVListModel
+    @Namespace var listAnimation
+
+    var body: some View {
+        let headerElement: CVElement = CVElement (from: model.header)
+        let footerElement: CVElement = CVElement (from: model.footer)
+
+        List {
+            Section (
+                header: headerElement.render(),
+                footer: footerElement.render(),
+                content: {
+                    model.renderContent(namespace: listAnimation)
+                }
+            )
+        }
+        .listStyle (InsetListStyle())
+    }
+}
+
+
+struct CVInsetGroupedList: View {
+    let model: CVListModel
+    @Namespace var listAnimation
+
+    var body: some View {
+        let headerElement: CVElement = CVElement (from: model.header)
+        let footerElement: CVElement = CVElement (from: model.footer)
+
+        List {
+            Section (
+                header: headerElement.render(),
+                footer: footerElement.render(),
+                content: {
+                    model.renderContent(namespace: listAnimation)
+                }
+            )
+        }
+        .listStyle (InsetGroupedListStyle())
+    }
+}
+
+struct CVSidebarList: View {
+    let model: CVListModel
+    @Namespace var listAnimation
+
+    var body: some View {
+        let headerElement: CVElement = CVElement (from: model.header)
+        let footerElement: CVElement = CVElement (from: model.footer)
+
+        List {
+            Section (
+                header: headerElement.render(),
+                footer: footerElement.render(),
+                content: {
+                    model.renderContent(namespace: listAnimation)
+                }
+            )
+        }
+        .listStyle (SidebarListStyle())
+    }
+}
+struct CVList: View {
+    let model: CVListModel
+    @Namespace var listAnimation
+
+    var body: some View {
+        let headerElement: CVElement = CVElement (from: model.header)
+        let footerElement: CVElement = CVElement (from: model.footer)
+
+        List {
+            Section (
+                header: headerElement.render(),
+                footer: footerElement.render(),
+                content: {
+                    model.renderContent(namespace: listAnimation)
+                }
+            )
+        }
+        .listStyle (DefaultListStyle())
+    }
+}
 
 
 

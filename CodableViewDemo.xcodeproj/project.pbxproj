@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4E046A2225766DBA00E4CDD1 /* NavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E046A2125766DB900E4CDD1 /* NavigationLink.swift */; };
 		4E046A2325766DBA00E4CDD1 /* NavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E046A2125766DB900E4CDD1 /* NavigationLink.swift */; };
+		4E046A272577C4FD00E4CDD1 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E046A262577C4FD00E4CDD1 /* Form.swift */; };
+		4E046A282577C4FD00E4CDD1 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E046A262577C4FD00E4CDD1 /* Form.swift */; };
 		4E1D99B6256F020B00026C73 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D99B5256F020B00026C73 /* List.swift */; };
 		4E1D99B7256F020B00026C73 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D99B5256F020B00026C73 /* List.swift */; };
 		4E1D99BD25714AEF00026C73 /* buildFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D99BC25714AEF00026C73 /* buildFrom.swift */; };
@@ -85,6 +87,7 @@
 		201A2851694B6D2F90673CF7 /* Pods-CodableViewDemo (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodableViewDemo (macOS).release.xcconfig"; path = "Target Support Files/Pods-CodableViewDemo (macOS)/Pods-CodableViewDemo (macOS).release.xcconfig"; sourceTree = "<group>"; };
 		473E00CEFB7AC4E7A5514366 /* Pods-CodableViewDemo (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodableViewDemo (macOS).debug.xcconfig"; path = "Target Support Files/Pods-CodableViewDemo (macOS)/Pods-CodableViewDemo (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		4E046A2125766DB900E4CDD1 /* NavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLink.swift; sourceTree = "<group>"; };
+		4E046A262577C4FD00E4CDD1 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		4E1D99B5256F020B00026C73 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		4E1D99BC25714AEF00026C73 /* buildFrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buildFrom.swift; sourceTree = "<group>"; };
 		4E3ACD492568487E00767BA6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -221,6 +224,7 @@
 				4E3ACD9B256848BF00767BA6 /* GradientBox.swift */,
 				4E81DDA62574D84D007DC026 /* ZStack.swift */,
 				4E046A2125766DB900E4CDD1 /* NavigationLink.swift */,
+				4E046A262577C4FD00E4CDD1 /* Form.swift */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -530,6 +534,7 @@
 				4E3ACD672568489400767BA6 /* Screen.swift in Sources */,
 				4E3ACD6B2568489400767BA6 /* Actions.swift in Sources */,
 				4E3ACD81256848B300767BA6 /* URLImage.swift in Sources */,
+				4E046A272577C4FD00E4CDD1 /* Form.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +574,7 @@
 				4E3ACD682568489400767BA6 /* Screen.swift in Sources */,
 				4E3ACD6C2568489400767BA6 /* Actions.swift in Sources */,
 				4E3ACD82256848B300767BA6 /* URLImage.swift in Sources */,
+				4E046A282577C4FD00E4CDD1 /* Form.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

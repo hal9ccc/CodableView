@@ -77,8 +77,19 @@ struct CVElement: Identifiable, Decodable {
 
         if ZStack           != nil { return CVZStack           (model: ZStack!           ).toAnyView() }
         if VStack           != nil { return CVVStack           (model: VStack!           ).toAnyView() }
-        if List             != nil { return CVList             (model: List!             ).toAnyView() }
+//        if List             != nil { return CVList             (model: List!             ).toAnyView() }
 
+ 
+//        if List             != nil { return CVList             (model: List!             ).toAnyView() }
+
+        if      List != nil && List!.style == "plain"        { return CVPlainList              (model: List!             ).toAnyView() }
+        else if List != nil && List!.style == "grouped"      { return CVGroupedList            (model: List!             ).toAnyView() }
+        else if List != nil && List!.style == "inset"        { return CVInsetList              (model: List!             ).toAnyView() }
+        else if List != nil && List!.style == "insetGrouped" { return CVInsetGroupedList       (model: List!             ).toAnyView() }
+        else if List != nil && List!.style == "sidebar"      { return CVSidebarList            (model: List!             ).toAnyView() }
+        else if List != nil                                  { return CVDefaultList            (model: List!             ).toAnyView() }
+        
+        
         if model() == nil {
             return SwiftUI.Text("this element contains no data").toAnyView()
         }
