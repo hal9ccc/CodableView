@@ -7,11 +7,16 @@
 
 import SwiftUI
 import CoreData
+import CodeScanner
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @State var viewId: String
+
+    @State private var input: String = ""
+    
+    @State private var isShowingScanner = false
 
     // screenManager provides us with screen data and updates
     //
@@ -32,11 +37,30 @@ struct ContentView: View {
         let vm1 = cvCache.viewModels[viewId]
         let vm2 = cvCache.viewModels["ListDemo"]
         let vm3 = cvCache.viewModels["ListDemo2"]
+        
 
         NavigationView {
 
             if vm1 != nil {
                 CVRootView(vm: vm1!)
+                    .overlay (
+                        Text("> \(input)")
+                            .foregroundColor(.gray)
+                            .font(.largeTitle)
+                            .padding(),
+                        alignment: .bottomTrailing
+                    )
+                    .navigationBarItems(
+                        trailing: Button(
+                            action: {
+                                print("pressed")
+                                self.isShowingScanner = true
+                            }
+                        ) {
+                              Image(systemName: "qrcode.viewfinder")
+                              Text("Scan")
+                          }
+                    )
             }
             else {
                 ProgressView()
@@ -52,15 +76,40 @@ struct ContentView: View {
 
         }
         .navigationBarTitleDisplayMode(.automatic)
-        .toolbar {
-            #if os(iOS)
-            EditButton()
-            #endif
+        .sheet(isPresented: $isShowingScanner) {
+            
+            // Map Iterable Enum to Dictionary so the elements can be accessed by name
+//            let allCodeTypes = AVMetadataObject.ObjectType.allCases.reduce(into: [String: AVMetadataObject.ObjectType]()) { $0["\($1)"] = $1 }
 
-//            Button(action: addItem) {
-//                Label("Add Item", systemImage: "plus")
-//            }
+            CodeScannerView (
+                codeTypes: [
+                    .qr,
+                    .dataMatrix,
+                    .aztec,
+                    .interleaved2of5,
+                    .pdf417,
+                    .code39,
+                    .code128,
+                    .code93,
+                    .code39Mod43,
+                    .itf14,
+                    .ean8,
+                    .ean13
+                ],
+                simulatedData: "Paul Hudson\npaul@hackingwithswift.com",
+                completion: self.handleScan
+            )
         }
+
+//        .toolbar {
+//            #if os(iOS)
+//            EditButton()
+//            #endif
+//
+////            Button(action: addItem) {
+////                Label("Add Item", systemImage: "plus")
+////            }
+//        }
         
         let _: () = print("view built")
     }
@@ -95,6 +144,19 @@ struct ContentView: View {
 //            }
 //        }
 //    }
+
+    func handleScan(result: Result<String, CodeScannerView.ScanError>) {
+        self.isShowingScanner = false
+        switch result {
+        case .success(let code):
+            print(code)
+            self.input = code
+            //let details = code.components(separatedBy: "\n")
+        case .failure(let error):
+            print("Scanning failed")
+        }
+    }
+    
 }
 
 private let itemFormatter: DateFormatter = {
@@ -110,3 +172,4 @@ struct ContentView_Previews: PreviewProvider {
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
+

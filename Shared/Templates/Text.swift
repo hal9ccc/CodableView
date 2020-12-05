@@ -14,6 +14,22 @@ let SwiftFontDesigns: [String: Font.Design] = [
     "monospaced":   Font.Design.monospaced
 ]
 
+//let SwiftColors: [String: Color] = [
+//    "clear":        Color.clear,
+//    "black":        Color.black,
+//    "white":        Color.white,
+//    "gray":         Color.gray,
+//    "red":          Color.red,
+//    "green":        Color.green,
+//    "blue":         Color.blue,
+//    "orange":       Color.orange,
+//    "yellow":       Color.yellow,
+//    "pink":         Color.pink,
+//    "purple":       Color.purple,
+//    "primary":      Color.primary,
+//    "secondary":    Color.secondary
+//]
+
 // Map Iterable Enum to Dictionary so the elements can be accessed by name
 let SwiftTextStyles  = Font.TextStyle.allCases.reduce(into: [String: Font.TextStyle]()) { $0["\($1)"] = $1 }
 
@@ -21,11 +37,13 @@ struct CVTextModel: viewable {
    
     var content: [CVElement]?
 
-    var text:           String
-    var style:          String?
-    var fontDesign:     String?
+    var text:                   String
+    var color:                  String? = ""
+    var backgroundColor:        String? = ""
+    var style:                  String? = ""
+    var fontDesign:             String? = ""
 
-    enum TextModelCodingKeys: String, CodingKey {
+    enum TextModelCodingKeys:   String, CodingKey {
         case text = "of"
     }
 
@@ -42,11 +60,16 @@ struct CVText: View {
     
     var body: some View {
 
-        let _textStyle    = SwiftTextStyles  [model.style  ?? ""] ?? SwiftTextStyles  ["body"]!
-        let _fontDesign   = SwiftFontDesigns [model.fontDesign ?? ""] ?? SwiftFontDesigns ["default"]!
+        let _textStyle    = SwiftTextStyles  [model.style       ?? ""] ?? SwiftTextStyles  ["body"]!
+        let _fontDesign   = SwiftFontDesigns [model.fontDesign  ?? ""] ?? SwiftFontDesigns ["default"]!
+//        let _color        = SwiftColors      [model.color       ?? ""] ?? SwiftColors      ["primary"]!
+
+        //print("color:\(_color)")
+        //let _: () = print("color:\(model.color)")
         
         Text("\(model.text)")
             .font(.system(_textStyle, design: _fontDesign))
+            .colored(with: model.color, backgroundColor: model.backgroundColor)
     }
 }
 

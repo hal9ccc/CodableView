@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+    
 protocol HasAction { }
 
 extension HasAction {

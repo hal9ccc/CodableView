@@ -85,6 +85,13 @@
 		4EBC9F482571BEA1008716EA /* VStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC9F462571BEA1008716EA /* VStack.swift */; };
 		4EBC9F4C2571C3D9008716EA /* views.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EBC9F4B2571C3D9008716EA /* views.json */; };
 		4EBC9F4D2571C3D9008716EA /* views.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EBC9F4B2571C3D9008716EA /* views.json */; };
+		4EEA462A257A590A00257B20 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 4EEA4629257A590A00257B20 /* CodeScanner */; };
+		4EEA462E257C3C1000257B20 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEA462D257C3C1000257B20 /* ViewModifiers.swift */; };
+		4EEA462F257C3C1000257B20 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEA462D257C3C1000257B20 /* ViewModifiers.swift */; };
+		4EEA4633257C46D000257B20 /* Divider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEA4632257C46D000257B20 /* Divider.swift */; };
+		4EEA4634257C46D000257B20 /* Divider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEA4632257C46D000257B20 /* Divider.swift */; };
+		4EEA463A257C47B600257B20 /* Spacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEA4639257C47B600257B20 /* Spacer.swift */; };
+		4EEA463B257C47B600257B20 /* Spacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEA4639257C47B600257B20 /* Spacer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +141,9 @@
 		4EBC9F3A2571B272008716EA /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		4EBC9F462571BEA1008716EA /* VStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VStack.swift; sourceTree = "<group>"; };
 		4EBC9F4B2571C3D9008716EA /* views.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = views.json; sourceTree = "<group>"; };
+		4EEA462D257C3C1000257B20 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		4EEA4632257C46D000257B20 /* Divider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Divider.swift; sourceTree = "<group>"; };
+		4EEA4639257C47B600257B20 /* Spacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacer.swift; sourceTree = "<group>"; };
 		6A51857829DB3BF7DF5F241C /* Pods-CodableViewDemo (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodableViewDemo (iOS).release.xcconfig"; path = "Target Support Files/Pods-CodableViewDemo (iOS)/Pods-CodableViewDemo (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		DDB59A0728B71428AD4CD13D /* Pods-CodableViewDemo (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodableViewDemo (iOS).debug.xcconfig"; path = "Target Support Files/Pods-CodableViewDemo (iOS)/Pods-CodableViewDemo (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +155,7 @@
 			files = (
 				4EBC9F432571B68D008716EA /* SFSafeSymbols in Frameworks */,
 				4E4EC06A25682CC2003B08F3 /* Charts in Frameworks */,
+				4EEA462A257A590A00257B20 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +183,7 @@
 				4E3ACD4A2568487E00767BA6 /* ImageDownloader.swift */,
 				4E1D99BC25714AEF00026C73 /* buildFrom.swift */,
 				4E81DD8325746EEF007DC026 /* renderContent.swift */,
+				4EEA462D257C3C1000257B20 /* ViewModifiers.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -223,16 +235,18 @@
 				4E3ACD9A256848BF00767BA6 /* Text.swift */,
 				4EBC9F3A2571B272008716EA /* Label.swift */,
 				4E1D99B5256F020B00026C73 /* List.swift */,
-				4EBC9F462571BEA1008716EA /* VStack.swift */,
 				4E3ACD97256848BF00767BA6 /* Chart.swift */,
 				4E3ACD98256848BF00767BA6 /* TextField.swift */,
 				4E3ACD99256848BF00767BA6 /* RoundedImage.swift */,
 				4E3ACD9B256848BF00767BA6 /* GradientBox.swift */,
+				4EBC9F462571BEA1008716EA /* VStack.swift */,
 				4E81DDA62574D84D007DC026 /* ZStack.swift */,
+				4E66944125796A5D0072DEE0 /* HStack.swift */,
 				4E046A2125766DB900E4CDD1 /* NavigationLink.swift */,
 				4E046A262577C4FD00E4CDD1 /* Form.swift */,
 				4E66943C25795ADC0072DEE0 /* Section.swift */,
-				4E66944125796A5D0072DEE0 /* HStack.swift */,
+				4EEA4632257C46D000257B20 /* Divider.swift */,
+				4EEA4639257C47B600257B20 /* Spacer.swift */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -337,6 +351,7 @@
 			packageProductDependencies = (
 				4E4EC06925682CC2003B08F3 /* Charts */,
 				4EBC9F422571B68D008716EA /* SFSafeSymbols */,
+				4EEA4629257A590A00257B20 /* CodeScanner */,
 			);
 			productName = "CodableViewDemo (iOS)";
 			productReference = 4E6E76D525681FD1009F9892 /* CodableViewDemo.app */;
@@ -390,6 +405,7 @@
 			packageReferences = (
 				4E4EC06825682CC2003B08F3 /* XCRemoteSwiftPackageReference "swiftui-charts" */,
 				4EBC9F412571B68D008716EA /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+				4EEA4628257A590A00257B20 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = 4E6E76D625681FD1009F9892 /* Products */;
 			projectDirPath = "";
@@ -511,8 +527,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E3ACD92256848BA00767BA6 /* CVRootViewModel.swift in Sources */,
+				4EEA463A257C47B600257B20 /* Spacer.swift in Sources */,
+				4EEA4633257C46D000257B20 /* Divider.swift in Sources */,
 				4E3ACD4B2568487E00767BA6 /* Constants.swift in Sources */,
 				4E3ACD77256848B300767BA6 /* StaticView.swift in Sources */,
+				4EEA462E257C3C1000257B20 /* ViewModifiers.swift in Sources */,
 				4E81DDA72574D84D007DC026 /* ZStack.swift in Sources */,
 				4E3ACD9E256848BF00767BA6 /* TextField.swift in Sources */,
 				4E3ACD9C256848BF00767BA6 /* Chart.swift in Sources */,
@@ -553,8 +572,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E3ACD93256848BA00767BA6 /* CVRootViewModel.swift in Sources */,
+				4EEA463B257C47B600257B20 /* Spacer.swift in Sources */,
+				4EEA4634257C46D000257B20 /* Divider.swift in Sources */,
 				4E3ACD4C2568487E00767BA6 /* Constants.swift in Sources */,
 				4E3ACD78256848B300767BA6 /* StaticView.swift in Sources */,
+				4EEA462F257C3C1000257B20 /* ViewModifiers.swift in Sources */,
 				4E81DDA82574D84D007DC026 /* ZStack.swift in Sources */,
 				4E3ACD9F256848BF00767BA6 /* TextField.swift in Sources */,
 				4E3ACD9D256848BF00767BA6 /* Chart.swift in Sources */,
@@ -856,6 +878,14 @@
 				minimumVersion = 2.1.0;
 			};
 		};
+		4EEA4628257A590A00257B20 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.7;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -868,6 +898,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4EBC9F412571B68D008716EA /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
 			productName = SFSafeSymbols;
+		};
+		4EEA4629257A590A00257B20 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4EEA4628257A590A00257B20 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
 		};
 /* End XCSwiftPackageProductDependency section */
 

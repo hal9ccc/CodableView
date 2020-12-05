@@ -25,7 +25,7 @@ extension viewable {
     func renderContent(namespace: Namespace.ID) -> AnyView {
         if content!.count == 0 { return ProgressView().toAnyView() }
 
-        let _: () = print("Content \(String(describing: content))")
+//        let _: () = print("Content \(String(describing: content))")
 
         return ForEach(content!, id: \.id) { element in
 //            let _: () = print("id \(element.id ?? "null")")
@@ -59,6 +59,10 @@ struct CVElement: Identifiable, Decodable {
 
     var List:           CVListModel? = nil
 
+    var Divider:        CVDividerModel? = nil
+    var Spacer:         CVSpacerModel? = nil
+    
+    
     func autoId() -> String {
         let f = id ?? model()?.autoId() ?? String(describing: self)
         print ("autoId(\(uniqueId)) \(f)");
@@ -87,13 +91,10 @@ struct CVElement: Identifiable, Decodable {
         if Section          != nil { return CVSection          (model: Section!          ).toAnyView() }
         if Form             != nil { return CVForm             (model: Form!             ).toAnyView() }
 
+        if Divider          != nil { return CVDivider          (model: Divider!          ).toAnyView() }
+        if Spacer           != nil { return CVSpacer           (model: Spacer!           ).toAnyView() }
         
         
-//        if List             != nil { return CVList             (model: List!             ).toAnyView() }
-
- 
-//        if List             != nil { return CVList             (model: List!             ).toAnyView() }
-
         if      List != nil && List!.style == "plain"        { return CVPlainList              (model: List!             ).toAnyView() }
         else if List != nil && List!.style == "grouped"      { return CVGroupedList            (model: List!             ).toAnyView() }
         else if List != nil && List!.style == "inset"        { return CVInsetList              (model: List!             ).toAnyView() }
@@ -101,7 +102,8 @@ struct CVElement: Identifiable, Decodable {
         else if List != nil && List!.style == "sidebar"      { return CVSidebarList            (model: List!             ).toAnyView() }
         else if List != nil                                  { return CVDefaultList            (model: List!             ).toAnyView() }
         
-        
+
+
         if model() == nil {
             return SwiftUI.Text("this element contains no data").toAnyView()
         }

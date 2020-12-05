@@ -34,9 +34,24 @@
                      { "id":"callout",          "Text": {"text": "callout",                    "style": "callout"       } },
                      { "id":"footnote",         "Text": {"text": "footnote",                   "style": "footnote"      } },
                      { "id":"caption",          "Text": {"text": "caption",                    "style": "caption"       } },
-                     { "id":"title serif",      "Text": {"text": "title serif",                "style": "title"         , "fontDesign": "serif"} },
-                     { "id":"title rounded",    "Text": {"text": "title rounded",              "style": "title"         , "fontDesign": "rounded"} },
-                     { "id":"title monospaced", "Text": {"text": "title monospaced",           "style": "title"         , "fontDesign": "monospaced"} }
+                     { "id":"title serif",      "Text": {"text": "title serif",                "style": "title"         , "fontDesign": "serif"      }},
+                     { "id":"title rounded",    "Text": {"text": "title rounded",              "style": "title"         , "fontDesign": "rounded"    }},
+                     { "id":"title monospaced", "Text": {"text": "title monospaced",           "style": "title"         , "fontDesign": "monospaced" }},
+                     { "id":"divider1",         "Divider": {  } },
+                     { "id":"txt_clear",        "Text": {"text": "clear"                     , "style": "headline"      , "color"     : "clear"      }},
+                     { "id":"txt_black",        "Text": {"text": "black"                     , "style": "headline"      , "color"     : "black"      }},
+                     { "id":"txt_white",        "Text": {"text": "white"                     , "style": "headline"      , "color"     : "white"      }},
+                     { "id":"txt_gray",         "Text": {"text": "gray"                      , "style": "headline"      , "color"     : "gray"       }},
+                     { "id":"txt_red",          "Text": {"text": "red"                       , "style": "headline"      , "color"     : "red"        }},
+                     { "id":"txt_green",        "Text": {"text": "green"                     , "style": "headline"      , "color"     : "green"      }},
+                     { "id":"txt_blue",         "Text": {"text": "blue"                      , "style": "headline"      , "color"     : "blue"       }},
+                     { "id":"txt_orange",       "Text": {"text": "orange"                    , "style": "headline"      , "color"     : "orange"     }},
+                     { "id":"txt_yellow",       "Text": {"text": "yellow"                    , "style": "headline"      , "color"     : "yellow"     }},
+                     { "id":"txt_pink",         "Text": {"text": "pink"                      , "style": "headline"      , "color"     : "pink"       }},
+                     { "id":"txt_purple",       "Text": {"text": "purple"                    , "style": "headline"      , "color"     : "purple"     }},
+                     { "id":"txt_primary",      "Text": {"text": "primary"                   , "style": "headline"      , "color"     : "primary"    }},
+                     { "id":"txt_secondary",    "Text": {"text": "secondary"                 , "style": "headline"      , "color"     : "secondary"  }}
+
                 ]
             }
         },
