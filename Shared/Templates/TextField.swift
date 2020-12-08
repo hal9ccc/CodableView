@@ -6,46 +6,50 @@
 
 import SwiftUI
 
-struct TextfieldModel: Decodable {
-    let name: String
-    let value: String
+struct CVTextFieldModel: Decodable {
+    let text: String
+    let value: String?
+    let style: String?
+    let disabled: String?
 }
 
-struct TextfieldView: View {
-    let model: TextfieldModel
-    //@Namespace var textfieldAnimation
+
+struct CVTextField: View {
+    let model: CVTextFieldModel
     
     @State private var entry: String = ""
 
     var body: some View {
+        
+        let _: () = print("TextField:\(model.text)")
 
-        HStack {
-            Text("\(model.name)")
-                .padding(.trailing)
-            
-            TextField("\(model.name)", text: $entry)
-                .padding(.leading)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .disabled(true)
-                .font(.system(size: 20))
-                .onAppear(perform: { entry = model.value })
-        }
+        TextField(model.text, text: $entry)
+//            .frame(minWidth: 20, maxWidth: .infinity, minHeight: 0, maxHeight: 200)
+//            .padding(.leading)
+//            .font(.system(size: 20))
+            .onAppear(perform: { entry = model.value ?? "" })
+        
     }
 }
 
-//struct TextfieldTemplate: CVElement {
-//    let id:    String?
-//    let model: TextfieldModel
-//    
-//    func render() -> AnyView {
-//        TextfieldView(model: model).toAnyView()
-//    }
-//}
+
+struct CVTextFieldRoundedBorders: View {
+    let model: CVTextFieldModel
+
+    var body: some View {
+        CVTextField(model: model)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+
+    }
+}
+
+
+
 
 struct TextfieldView_Previews: PreviewProvider {
     static var previews: some View {
         Form {
-          TextfieldView(model: TextfieldModel(name: "Field name", value: "Field Value"))
+            CVTextField(model: CVTextFieldModel(text: "placeholder", value: "the value", style: "", disabled: ""))
         }
         .padding(.horizontal)
     }

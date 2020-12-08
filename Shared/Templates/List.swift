@@ -20,11 +20,12 @@ struct CVListModel: viewable {
 
 struct CVList: View {
     let model: CVListModel
-    @Namespace var listAnimation
+    //@Namespace var listAnimation
 
     var body: some View {
         List {
-            model.renderContent(namespace: listAnimation)
+            model.renderContent()
+            //model.renderContent(namespace: listAnimation)
         }
     }
 }

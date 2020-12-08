@@ -92,6 +92,8 @@
 		4EEA4634257C46D000257B20 /* Divider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEA4632257C46D000257B20 /* Divider.swift */; };
 		4EEA463A257C47B600257B20 /* Spacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEA4639257C47B600257B20 /* Spacer.swift */; };
 		4EEA463B257C47B600257B20 /* Spacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEA4639257C47B600257B20 /* Spacer.swift */; };
+		4EEA463F257D4A4900257B20 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEA463E257D4A4900257B20 /* ImagePicker.swift */; };
+		4EEA4640257D4A4900257B20 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEA463E257D4A4900257B20 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,6 +146,7 @@
 		4EEA462D257C3C1000257B20 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		4EEA4632257C46D000257B20 /* Divider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Divider.swift; sourceTree = "<group>"; };
 		4EEA4639257C47B600257B20 /* Spacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacer.swift; sourceTree = "<group>"; };
+		4EEA463E257D4A4900257B20 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		6A51857829DB3BF7DF5F241C /* Pods-CodableViewDemo (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodableViewDemo (iOS).release.xcconfig"; path = "Target Support Files/Pods-CodableViewDemo (iOS)/Pods-CodableViewDemo (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		DDB59A0728B71428AD4CD13D /* Pods-CodableViewDemo (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodableViewDemo (iOS).debug.xcconfig"; path = "Target Support Files/Pods-CodableViewDemo (iOS)/Pods-CodableViewDemo (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,6 +219,7 @@
 				4E3ACD70256848B300767BA6 /* StaticView.swift */,
 				4E3ACD72256848B300767BA6 /* DebugView.swift */,
 				4E3ACD75256848B300767BA6 /* URLImage.swift */,
+				4EEA463E257D4A4900257B20 /* ImagePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -526,6 +530,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EEA463F257D4A4900257B20 /* ImagePicker.swift in Sources */,
 				4E3ACD92256848BA00767BA6 /* CVRootViewModel.swift in Sources */,
 				4EEA463A257C47B600257B20 /* Spacer.swift in Sources */,
 				4EEA4633257C46D000257B20 /* Divider.swift in Sources */,
@@ -571,6 +576,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EEA4640257D4A4900257B20 /* ImagePicker.swift in Sources */,
 				4E3ACD93256848BA00767BA6 /* CVRootViewModel.swift in Sources */,
 				4EEA463B257C47B600257B20 /* Spacer.swift in Sources */,
 				4EEA4634257C46D000257B20 /* Divider.swift in Sources */,

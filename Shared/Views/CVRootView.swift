@@ -15,6 +15,9 @@ struct CVRootView: View {
     @State private var isError = false
     @State private var error: Error?
     
+    @State private var image: Image?
+    @State private var showingImagePicker = false
+    
     @Namespace var rootAnimation
     
     var body: some View {

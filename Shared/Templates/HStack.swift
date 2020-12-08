@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CVHStackModel: viewable {
     var content: [CVElement]?
+    var alignment: String?
+    var multilineTextAlignment: String?
 }
 
 
@@ -17,9 +19,23 @@ struct CVHStack: View {
     @Namespace var HStackAnimation
 
     var body: some View {
-        HStack {
+        let verticalAlignment: VerticalAlignment = (
+            model.alignment == "top"                ? VerticalAlignment.top :
+            model.alignment == "bottom"             ? VerticalAlignment.bottom :
+            model.alignment == "firstTextBaseline"  ? VerticalAlignment.firstTextBaseline :
+            model.alignment == "lastTextBaseline"   ? VerticalAlignment.lastTextBaseline :
+            VerticalAlignment.center
+        )
+        
+        let horizontalAlignment: TextAlignment = (
+            model.multilineTextAlignment == "center"   ? TextAlignment.center :
+            model.multilineTextAlignment == "trailing" ? TextAlignment.trailing : TextAlignment.leading
+        )
+        
+        return HStack (alignment: verticalAlignment) {
             model.renderContent(namespace: HStackAnimation)
         }
+        .multilineTextAlignment(horizontalAlignment)
     }
 }
 

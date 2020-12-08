@@ -23,11 +23,11 @@ struct CVSection: View {
 
         Section (
             header: headerElement.render(),
-            footer: footerElement.render(),
-            content: {
-                model.renderContent(namespace: sectionAnimation)
-            }
-        )
+            footer: footerElement.render()
+        ) {
+            model.renderContent()
+        }
+        
     }
 }
 

@@ -22,18 +22,20 @@ extension viewable {
         return f
     }
 
+    func renderContent() -> AnyView {
+        if content!.count == 0 { return ProgressView().toAnyView() }
+        return ForEach(content!, id: \.id) { element in
+            element.render()
+        }.toAnyView()
+    }
+
     func renderContent(namespace: Namespace.ID) -> AnyView {
         if content!.count == 0 { return ProgressView().toAnyView() }
 
-//        let _: () = print("Content \(String(describing: content))")
-
         return ForEach(content!, id: \.id) { element in
-//            let _: () = print("id \(element.id ?? "null")")
-//            let _: () = print("autoId \(element.autoId())")
             element.render()
                 .matchedGeometryEffect(id: element.id, in: namespace)
         }.toAnyView()
-        
     }
 
 }
@@ -47,6 +49,7 @@ struct CVElement: Identifiable, Decodable {
     var Error:          CVErrorModel? = nil
 
     var Text:           CVTextModel? = nil
+    var TextField:      CVTextFieldModel? = nil
     var Label:          CVLabelModel? = nil
     var NavigationLink: CVNavigationLinkModel? = nil
 
@@ -95,12 +98,15 @@ struct CVElement: Identifiable, Decodable {
         if Spacer           != nil { return CVSpacer           (model: Spacer!           ).toAnyView() }
         
         
-        if      List != nil && List!.style == "plain"        { return CVPlainList              (model: List!             ).toAnyView() }
-        else if List != nil && List!.style == "grouped"      { return CVGroupedList            (model: List!             ).toAnyView() }
-        else if List != nil && List!.style == "inset"        { return CVInsetList              (model: List!             ).toAnyView() }
-        else if List != nil && List!.style == "insetGrouped" { return CVInsetGroupedList       (model: List!             ).toAnyView() }
-        else if List != nil && List!.style == "sidebar"      { return CVSidebarList            (model: List!             ).toAnyView() }
-        else if List != nil                                  { return CVDefaultList            (model: List!             ).toAnyView() }
+        if      TextField != nil && TextField!.style == "roundedBorders" { return CVTextFieldRoundedBorders    (model: TextField!        ).toAnyView() }
+        else if TextField != nil                                         { return CVTextField                  (model: TextField!        ).toAnyView() }
+
+        if      List      != nil && List!.style      == "plain"          { return CVPlainList                  (model: List!             ).toAnyView() }
+        else if List      != nil && List!.style      == "grouped"        { return CVGroupedList                (model: List!             ).toAnyView() }
+        else if List      != nil && List!.style      == "inset"          { return CVInsetList                  (model: List!             ).toAnyView() }
+        else if List      != nil && List!.style      == "insetGrouped"   { return CVInsetGroupedList           (model: List!             ).toAnyView() }
+        else if List      != nil && List!.style      == "sidebar"        { return CVSidebarList                (model: List!             ).toAnyView() }
+        else if List      != nil                                         { return CVDefaultList                (model: List!             ).toAnyView() }
         
 
 
