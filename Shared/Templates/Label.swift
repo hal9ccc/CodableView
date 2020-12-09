@@ -13,12 +13,6 @@ struct CVLabelModel: viewable {
     var text:           String
     var image:          String?
 
-    func autoId() -> String {
-        let f = text > "" ?  text : String(describing: self)
-        print ("autoId: \(f)")
-        return f
-    }
-
 }
 
 struct CVLabel: View {

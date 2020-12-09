@@ -11,12 +11,12 @@
                         "header": {"text": "Demo ", "style": "caption"      },
                         "footer": {"text": "List elements are automatically animated for insertion, removal and also order changes, provided they have distinct IDs", "style": "footnote" },
                         "content": [
-                            { "id": "link_1",           "NavigationLink": {"text": "VStack",                "destinationViewId": "VStackDemo"   ,"navigationTitle": "VStackDemo" } },
-                            { "id": "link_2",           "NavigationLink": {"text": "List",                  "destinationViewId": "ListDemo"     ,"navigationTitle": "ListDemo"   } },
-                            { "id": "link_4",           "NavigationLink": {"text": "Section",               "destinationViewId": "SectionDemo"  ,"navigationTitle": "SectionDemo" } },
-                            { "id": "link_3",           "NavigationLink": {"text": "Form",                  "destinationViewId": "FormDemo"     ,"navigationTitle": "FormDemo"   } },
+                            { "NavigationLink": {"text": "VStack",                "destinationViewId": "VStackDemo"   ,"navigationTitle": "VStackDemo" } },
+                            { "NavigationLink": {"text": "List",                  "destinationViewId": "ListDemo"     ,"navigationTitle": "ListDemo"   } },
+                            { "NavigationLink": {"text": "Section",               "destinationViewId": "SectionDemo"  ,"navigationTitle": "SectionDemo" } },
+                            { "NavigationLink": {"text": "Form",                  "destinationViewId": "FormDemo"     ,"navigationTitle": "FormDemo"   } },
 
-                            { "id": "link_999",         "NavigationLink": {"text": "Text Demo",             "destinationViewId": "TextDemo"     ,"navigationTitle": "TextDemo"   } }
+                            { "NavigationLink": {"text": "Text Demo",             "destinationViewId": "TextDemo"     ,"navigationTitle": "TextDemo"   } }
                         ]
                     } }
                 ]
@@ -27,31 +27,31 @@
             "title": "Text",
             "VStack": {
                 "content": [
-                     { "id":"largeTitle",       "Text": {"text": "largeTitle",                 "style": "largeTitle"    } },
-                     { "id":"title",            "Text": {"text": "title",                      "style": "title"         } },
-                     { "id":"headline",         "Text": {"text": "headline",                   "style": "headline"      } },
-                     { "id":"subheadline",      "Text": {"text": "subheadline",                "style": "subheadline"   } },
-                     { "id":"body",             "Text": {"text": "body",                       "style": "body"          } },
-                     { "id":"callout",          "Text": {"text": "callout",                    "style": "callout"       } },
-                     { "id":"footnote",         "Text": {"text": "footnote",                   "style": "footnote"      } },
-                     { "id":"caption",          "Text": {"text": "caption",                    "style": "caption"       } },
-                     { "id":"title serif",      "Text": {"text": "title serif",                "style": "title"         , "fontDesign": "serif"      }},
-                     { "id":"title rounded",    "Text": {"text": "title rounded",              "style": "title"         , "fontDesign": "rounded"    }},
-                     { "id":"title monospaced", "Text": {"text": "title monospaced",           "style": "title"         , "fontDesign": "monospaced" }},
-                     { "id":"divider1",         "Divider": {  } },
-                     { "id":"txt_clear",        "Text": {"text": "clear"                     , "style": "headline"      , "color"     : "clear"      }},
-                     { "id":"txt_black",        "Text": {"text": "black"                     , "style": "headline"      , "color"     : "black"      }},
-                     { "id":"txt_white",        "Text": {"text": "white"                     , "style": "headline"      , "color"     : "white"      }},
-                     { "id":"txt_gray",         "Text": {"text": "gray"                      , "style": "headline"      , "color"     : "gray"       }},
-                     { "id":"txt_red",          "Text": {"text": "red"                       , "style": "headline"      , "color"     : "red"        }},
-                     { "id":"txt_green",        "Text": {"text": "green"                     , "style": "headline"      , "color"     : "green"      }},
-                     { "id":"txt_blue",         "Text": {"text": "blue"                      , "style": "headline"      , "color"     : "blue"       }},
-                     { "id":"txt_orange",       "Text": {"text": "orange"                    , "style": "headline"      , "color"     : "orange"     }},
-                     { "id":"txt_yellow",       "Text": {"text": "yellow"                    , "style": "headline"      , "color"     : "yellow"     }},
-                     { "id":"txt_pink",         "Text": {"text": "pink"                      , "style": "headline"      , "color"     : "pink"       }},
-                     { "id":"txt_purple",       "Text": {"text": "purple"                    , "style": "headline"      , "color"     : "purple"     }},
-                     { "id":"txt_primary",      "Text": {"text": "primary"                   , "style": "headline"      , "color"     : "primary"    }},
-                     { "id":"txt_secondary",    "Text": {"text": "secondary"                 , "style": "headline"      , "color"     : "secondary"  }}
+                     { "Text": {"text": "largeTitle",                 "style": "largeTitle"    } },
+                     { "Text": {"text": "title",                      "style": "title"         } },
+                     { "Text": {"text": "headline",                   "style": "headline"      } },
+                     { "Text": {"text": "subheadline",                "style": "subheadline"   } },
+                     { "Text": {"text": "body",                       "style": "body"          } },
+                     { "Text": {"text": "callout",                    "style": "callout"       } },
+                     { "Text": {"text": "footnote",                   "style": "footnote"      } },
+                     { "Text": {"text": "caption",                    "style": "caption"       } },
+                     { "Text": {"text": "title serif",                "style": "title"         , "fontDesign": "serif"      }},
+                     { "Text": {"text": "title rounded",              "style": "title"         , "fontDesign": "rounded"    }},
+                     { "Text": {"text": "title monospaced",           "style": "title"         , "fontDesign": "monospaced" }},
+                     { "Divider": {  } },
+                     { "Text": {"text": "clear"                     , "style": "headline"      , "color"     : "clear"      }},
+                     { "Text": {"text": "black"                     , "style": "headline"      , "color"     : "black"      }},
+                     { "Text": {"text": "white"                     , "style": "headline"      , "color"     : "white"      }},
+                     { "Text": {"text": "gray"                      , "style": "headline"      , "color"     : "gray"       }},
+                     { "Text": {"text": "red"                       , "style": "headline"      , "color"     : "red"        }},
+                     { "Text": {"text": "green"                     , "style": "headline"      , "color"     : "green"      }},
+                     { "Text": {"text": "blue"                      , "style": "headline"      , "color"     : "blue"       }},
+                     { "Text": {"text": "orange"                    , "style": "headline"      , "color"     : "orange"     }},
+                     { "Text": {"text": "yellow"                    , "style": "headline"      , "color"     : "yellow"     }},
+                     { "Text": {"text": "pink"                      , "style": "headline"      , "color"     : "pink"       }},
+                     { "Text": {"text": "purple"                    , "style": "headline"      , "color"     : "purple"     }},
+                     { "Text": {"text": "primary"                   , "style": "headline"      , "color"     : "primary"    }},
+                     { "Text": {"text": "secondary"                 , "style": "headline"      , "color"     : "secondary"  }}
 
                 ]
             }
@@ -82,61 +82,33 @@
                 "id":"l1",
                 "style": "insetGrouped",
                 "content": [
-                    { "id": "Sun2",         "Label": {"text": "Sun",                "image": "sun.max.fill"           } },
-                    { "id": "Sun+Cloud2",   "Label": {"text": "Sun+Cloud",          "image": "cloud.sun.fill"         } },
-                    { "id": "Rain2",        "Label": {"text": "Rain ",              "image": "cloud.sun.rain.fill"    } },
-                    { "id": "Cloud2",       "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
-                    { "id": "Snow2",        "Label": {"text": "Snow",               "image": "cloud.snow.fill"        } }
-                ]
-            }
-        },
-        "ListDemo2": {
-            "id": "ListDemo2",
-            "title": "List",
-            "List": {
-                "id":"l2",
-                "style": "insetGrouped",
-                "content": [
-                    { "id": "Sun2",         "Label": {"text": "Sun",                "image": "sun.max.fill"           } },
-                    { "id": "Sun+Cloud2",   "Label": {"text": "Sun+Cloud",          "image": "cloud.sun.fill"         } },
-                    { "id": "Sune+Cloud2",   "Label": {"text": "Sun+Cloud",          "image": "cloud.sun.fill"         } },
-                    { "id": "Raien2",        "Label": {"text": "Rain ",              "image": "cloud.sun.rain.fill"    } },
-                    { "id": "Cloccud2",       "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
-                    { "id": "Sundc+Cloud2",   "Label": {"text": "Sun+Cloud",          "image": "cloud.sun.fill"         } },
-                    { "id": "Raidcn2",        "Label": {"text": "Rain ",              "image": "cloud.sun.rain.fill"    } },
-                    { "id": "Clocddud2",       "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
-                    { "id": "Raicdn2",        "Label": {"text": "Rain ",              "image": "cloud.sun.rain.fill"    } },
-                    { "id": "Clodcud2",       "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
-                    { "id": "Snowxcaxc2",        "Label": {"text": "Snow",               "image": "cloud.snow.fill"        } }
+                    { "id": "Sun",         "Label": {"text": "Sun",                "image": "sun.max.fill"           } },
+                    { "id": "Sun+Cloud",   "Label": {"text": "Sun+Cloud",          "image": "cloud.sun.fill"         } },
+                    { "id": "Rain",        "Label": {"text": "Rain ",              "image": "cloud.sun.rain.fill"    } },
+                    { "id": "Cloud",       "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
+                    { "id": "Snow",        "Label": {"text": "Snow",               "image": "cloud.snow.fill"        } }
                 ]
             }
         },
         "SectionDemo": {
-            "id": "SectionDemo",
             "List": {
-                "id":"l1",
                 "style": "insetGrouped",
                 "content": [
-                    {"id":"s1", "Section": {
+                    {"Section": {
                         "header": { "id":"header1", "text": "good weather", "style": "headline"  },
                         "footer": { "text": "i like", "style": "footnote" },
                         "content": [
-                            { "id": "link_1",           "NavigationLink": {"text": "VStack",                "destinationViewId": "VStackDemo"   ,"navigationTitle": "VStackDemo" } },
-                            { "id": "link_2",           "NavigationLink": {"text": "List",                  "destinationViewId": "ListDemo"     ,"navigationTitle": "ListDemo"   } },
-                            { "id": "link_4",           "NavigationLink": {"text": "Section",               "destinationViewId": "SectionDemo"  ,"navigationTitle": "SectionDemo" } },
-                            { "id": "link_3",           "NavigationLink": {"text": "Form",                  "destinationViewId": "FormDemo"     ,"navigationTitle": "FormDemo"   } },
-
-                            { "id": "FormSun4",          "Label": {"text": "Sun",                "image": "sun.max.fill"           } },
-                            { "id": "FormSun+Cloud4",    "Label": {"text": "Sun+Cloud",          "image": "cloud.sun.fill"         } },
-                            { "id": "FormSnow4",         "Label": {"text": "Snow",               "image": "cloud.snow.fill"        } }
+                            { "Label": {"text": "Sun",                "image": "sun.max.fill"           } },
+                            { "Label": {"text": "Sun+Cloud",          "image": "cloud.sun.fill"         } },
+                            { "Label": {"text": "Snow",               "image": "cloud.snow.fill"        } }
                         ]
                     } },
-                    {"id":"s2", "Section": {
+                    {"Section": {
                         "header": { "id":"header2", "text": "not so good weather", "style": "headline"  },
                         "footer": { "text": "dont like", "style": "footnote" },
                         "content": [
-                            { "id": "FormCloud4",        "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
-                            { "id": "FormRain4",         "Label": {"text": "Rain ",              "image": "cloud.sun.rain.fill"    } }
+                            { "Label": {"text": "Cloud",              "image": "cloud.fill"             } },
+                            { "Label": {"text": "Rain ",              "image": "cloud.sun.rain.fill"    } }
                         ]
                     } }
 
@@ -144,13 +116,12 @@
             }
         },
         "FormDemo": {
-            "id": "FormDemo",
             "title": "Form",
             "Form": {
                 "content": [
-                    { "id": "f1",  "HStack": { "multilineTextAlignment":"trailing", "content": [ { "id":"t1",  "Text": { "text":"IP-Adresse"    }}, { "id":"tf1", "TextField" : { "text":"0.0.0.0",      "value": "",   "style": ""      }} ] } },
-                    { "id": "f2",  "HStack": { "multilineTextAlignment":"trailing", "content": [ { "id":"t2",  "Text": { "text":"Teilnetzmaske" }}, { "id":"tf2", "TextField" : { "text":"255.255.0.0",  "value": "",   "style": ""      }} ] } },
-                    { "id": "f3",  "HStack": { "multilineTextAlignment":"trailing", "content": [ { "id":"t3",  "Text": { "text":"Router"        }}, { "id":"tf3", "TextField" : { "text":"abc",          "value": "",   "style": ""      }} ] } }
+                    { "HStack": { "multilineTextAlignment":"trailing", "content": [ { "Text": { "text":"IP-Adresse"    }}, { "TextField" : { "text":"0.0.0.0",      "value": "",   "style": ""      }} ] } },
+                    { "HStack": { "multilineTextAlignment":"trailing", "content": [ { "Text": { "text":"Teilnetzmaske" }}, { "TextField" : { "text":"255.255.0.0",  "value": "",   "style": ""      }} ] } },
+                    { "HStack": { "multilineTextAlignment":"trailing", "content": [ { "Text": { "text":"Router"        }}, { "TextField" : { "text":"abc",          "value": "",   "style": ""      }} ] } }
                 ]
             }
         }

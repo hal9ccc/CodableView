@@ -14,11 +14,6 @@ struct CVNavigationLinkModel: viewable {
     var navigationTitle:          String
     var destinationViewId:        String
 
-    func autoId() -> String {
-        let f = text > "" ?  text : String(describing: self)
-        print ("autoId: \(f)")
-        return f
-    }
 }
 
 struct CVNavigationLink: View {

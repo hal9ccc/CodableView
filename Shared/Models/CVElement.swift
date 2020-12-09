@@ -16,10 +16,11 @@ protocol viewable: Decodable {
 extension viewable {
     var uniqueId: UUID { UUID() }
 
-    func autoId() -> String {
-        let f = String(describing: self)
-        print ("autoId::generic: \(f)")
-        return f
+    func contentWithGuaranteedId(baseId: String) -> [CVElement]? {
+        if content == nil { return nil}
+        return content!.enumerated().map { (index, element) in
+            element.withGuaranteedId(baseId: baseId, idx: index)
+        }
     }
 
     func renderContent() -> AnyView {
@@ -65,21 +66,35 @@ struct CVElement: Identifiable, Decodable {
     var Divider:        CVDividerModel? = nil
     var Spacer:         CVSpacerModel? = nil
     
-    
-    func autoId() -> String {
-        let f = id ?? model()?.autoId() ?? String(describing: self)
-        print ("autoId(\(uniqueId)) \(f)");
+    func withGuaranteedId(baseId: String, idx: Int = -1) -> CVElement {
+        var f = self
+       
+        let modelType = "\(type(of: f.model()))"
+            .replacingOccurrences(of: "CV",    with: "")
+            .replacingOccurrences(of: "Model", with: "")
+        
+        if (f.id ?? "").isEmpty {
+            f.id = baseId + "." + modelType + (idx >= 0 ? "-\(idx)" : "")
+            print("generated id:" + f.id!)
+        }
+        
+        if f.List       != nil { f.List!    .content = f.List!      .contentWithGuaranteedId(baseId: f.id ?? "") }
+        if f.VStack     != nil { f.VStack!  .content = f.VStack!    .contentWithGuaranteedId(baseId: f.id ?? "") }
+        if f.HStack     != nil { f.HStack!  .content = f.HStack!    .contentWithGuaranteedId(baseId: f.id ?? "") }
+        if f.ZStack     != nil { f.ZStack!  .content = f.ZStack!    .contentWithGuaranteedId(baseId: f.id ?? "") }
+        if f.Form       != nil { f.Form!    .content = f.Form!      .contentWithGuaranteedId(baseId: f.id ?? "") }
+        if f.Section    != nil { f.Section! .content = f.Section!   .contentWithGuaranteedId(baseId: f.id ?? "") }
+
         return f
     }
-
-    //var content: [CVElement]? = [CVElement]()
+    
 
     // builds a view matching the first viewable
     // TODO: find indirect way to return the corrosponding view
     func render() -> AnyView {
 
         let data: viewable? = model()
-        //print ("Model: \(String(describing: model()))");
+        print ("Model: \(String(describing: model()))");
         
         if Error            != nil { return CVError            (model: Error!            ).toAnyView() }
         if Text             != nil { return CVText             (model: Text!             ).toAnyView() }
@@ -98,15 +113,15 @@ struct CVElement: Identifiable, Decodable {
         if Spacer           != nil { return CVSpacer           (model: Spacer!           ).toAnyView() }
         
         
-        if      TextField != nil && TextField!.style == "roundedBorders" { return CVTextFieldRoundedBorders    (model: TextField!        ).toAnyView() }
-        else if TextField != nil                                         { return CVTextField                  (model: TextField!        ).toAnyView() }
-
-        if      List      != nil && List!.style      == "plain"          { return CVPlainList                  (model: List!             ).toAnyView() }
-        else if List      != nil && List!.style      == "grouped"        { return CVGroupedList                (model: List!             ).toAnyView() }
-        else if List      != nil && List!.style      == "inset"          { return CVInsetList                  (model: List!             ).toAnyView() }
-        else if List      != nil && List!.style      == "insetGrouped"   { return CVInsetGroupedList           (model: List!             ).toAnyView() }
-        else if List      != nil && List!.style      == "sidebar"        { return CVSidebarList                (model: List!             ).toAnyView() }
-        else if List      != nil                                         { return CVDefaultList                (model: List!             ).toAnyView() }
+        if      TextField   != nil && TextField!.style == "roundedBorders" { return CVTextFieldRoundedBorders    (model: TextField!        ).toAnyView() }
+        else if TextField   != nil                                         { return CVTextField                  (model: TextField!        ).toAnyView() }
+  
+        if      List        != nil && List!.style      == "plain"          { return CVPlainList                  (model: List!             ).toAnyView() }
+        else if List        != nil && List!.style      == "grouped"        { return CVGroupedList                (model: List!             ).toAnyView() }
+        else if List        != nil && List!.style      == "inset"          { return CVInsetList                  (model: List!             ).toAnyView() }
+        else if List        != nil && List!.style      == "insetGrouped"   { return CVInsetGroupedList           (model: List!             ).toAnyView() }
+        else if List        != nil && List!.style      == "sidebar"        { return CVSidebarList                (model: List!             ).toAnyView() }
+        else if List        != nil                                         { return CVDefaultList                (model: List!             ).toAnyView() }
         
 
 
@@ -119,16 +134,27 @@ struct CVElement: Identifiable, Decodable {
     
 
     // uses reflection to return the first property that conforms to our viewable protocol
-    func model() -> viewable? {
-        let mirror = Mirror(reflecting: self)
-
+    func model() -> viewable {
+        let mirror = Mirror (reflecting: self)
+//        var v: viewable?
+        
         for child in mirror.children {
-            if let viewable = child.value as? viewable {
-                return viewable
-            }
+//            if child.value.
+//            if child.value != nil {
+//                print("child.label:    "+String(describing: child.label))
+//                print("child.value:    "+String(describing: child.value))
+//            }
+//            print("child:    "+String(describing: child))
+            
+            if let f = child.value as? CVZStackModel  { return f }
+            if let f = child.value as? CVHStackModel  { return f }
+            if let f = child.value as? CVVStackModel  { return f }
+            if let f = child.value as? CVFormModel    { return f }
+            if let f = child.value as? CVListModel    { return f }
+            if let f = child.value as? CVSectionModel { return f }
         }
         
-        return nil
+        return CVTextModel(from: "no data")
     }
     
     // creates a CVElement with an error message

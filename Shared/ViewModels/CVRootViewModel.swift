@@ -20,16 +20,18 @@ class CVRootViewModel: ObservableObject, Identifiable {
         
         print("\(String(describing: id)) loading \(element)")
         
+        let element_with_guaranteed_ids = element.withGuaranteedId(baseId: id!)
+        
         if async {
             DispatchQueue.main.async {
                 withAnimation (.easeInOut) {
-                    self.element = element
+                    self.element = element_with_guaranteed_ids
                 }
             }
         }
         else {
             withAnimation (.easeInOut) {
-                self.element = element
+                self.element = element_with_guaranteed_ids
             }
         }
     }
