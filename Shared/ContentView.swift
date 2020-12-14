@@ -17,6 +17,9 @@ struct ContentView: View {
     @State private var input: String = ""
     
     @State private var isShowingScanner = false
+    
+    @State private var isShowingImagePicker = false
+    @State private var inputImage: UIImage?
 
     // screenManager provides us with screen data and updates
     //
@@ -48,18 +51,46 @@ struct ContentView: View {
                             .foregroundColor(.gray)
                             .font(.largeTitle)
                             .padding(),
+                        
                         alignment: .bottomTrailing
                     )
-                    .navigationBarItems(
-                        trailing: Button(
-                            action: {
-                                print("pressed")
-                                self.isShowingScanner = true
-                            }
-                        ) {
-                              Image(systemName: "qrcode.viewfinder")
-                              Text("Scan")
-                          }
+//                    .navigationBarItems(
+//                        trailing: Button(
+//                            action: {
+//                                print("pressed")
+//                                self.isShowingScanner = true
+//                            }
+//                        ) {
+//                              Image(systemName: "qrcode.viewfinder")
+//                              Text("Scan")
+//                          }
+//                    )
+                    .overlay(
+                        HStack {
+                       
+                            Button(
+                                action: {
+                                    print("pressed")
+                                    self.isShowingScanner = true
+                                }
+                            ) {
+                                  Image(systemName: "qrcode.viewfinder")
+                                  Text("Scan")
+                              }
+
+                            Button(
+                                action: {
+                                    print("pressed")
+                                    self.isShowingImagePicker = true
+                                }
+                            ) {
+                                  Image(systemName: "photo.on.rectangle")
+                                  Text("Images")
+                              }
+                   
+                        },
+                        
+                        alignment: .bottom
                     )
             }
             else {
@@ -101,15 +132,36 @@ struct ContentView: View {
             )
         }
 
-//        .toolbar {
-//            #if os(iOS)
-//            EditButton()
-//            #endif
-//
-////            Button(action: addItem) {
-////                Label("Add Item", systemImage: "plus")
-////            }
-//        }
+        .sheet(isPresented: $isShowingImagePicker) {
+            ImagePicker(image: self.$inputImage)
+        }
+        .toolbar {
+
+            Button(
+                action: {
+                    print("pressed")
+                    self.isShowingScanner = true
+                }
+            ) {
+                  Image(systemName: "qrcode.viewfinder")
+                  Text("Scan")
+              }
+
+            Button(
+                action: {
+                    print("pressed")
+                    self.isShowingImagePicker = true
+                }
+            ) {
+                  Image(systemName: "photo.on.rectangle")
+                  Text("Images")
+              }
+
+
+//            Button(action: addItem) {
+//                Label("Add Item", systemImage: "plus")
+//            }
+        }
         
         let _: () = print("view built")
     }
@@ -158,6 +210,81 @@ struct ContentView: View {
     }
     
 }
+
+
+
+extension Notification.Name {
+    static let enter = Notification.Name("enter")
+    static let remove = Notification.Name("remove")
+    static let submit = Notification.Name("submit")
+}
+
+
+class LoadingViewController: UIViewController {
+    private lazy var activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(activityIndicator)
+
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // We use a 0.5 second delay to not show an activity indicator
+        // in case our data loads very quickly.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.activityIndicator.startAnimating()
+        }
+    }
+}
+
+
+struct KeypressRespondingView: UIViewRepresentable {
+    func makeUIView(context: Context) -> UIView {
+        UIView()
+    }
+
+    func updateUIView(_ view: UIView, context: Context) {
+        
+    }
+}
+
+
+class TypingController: UIViewController {
+    override func viewDidLoad() {
+        print("viewDidLoad---------------------------------")
+        super.viewDidLoad()
+        let hostingController = UIHostingController(rootView: ContentView(viewId: "Main"))
+        view.addSubview(hostingController.view)
+    }
+    
+    override func pressesBegan(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
+        guard let key = presses.first?.key else { return }
+        print("pressesBegan: \(key)")
+        switch key.keyCode {
+            case .keyboardDeleteOrBackspace:
+                NotificationCenter.default.post(name: .remove, object: nil)
+            case .keyboardReturn:
+                NotificationCenter.default.post(name: .submit, object: nil)
+            default:
+                let characters = key.characters
+                if let number = Int(characters) {
+                    NotificationCenter.default.post(name: .enter, object: number)
+                } else {
+                    super.pressesBegan(presses, with: event)
+                }
+        }
+    }
+}
+
 
 private let itemFormatter: DateFormatter = {
     let formatter = DateFormatter()

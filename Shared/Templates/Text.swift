@@ -40,8 +40,10 @@ struct CVTextModel: viewable {
     var text:                   String
     var color:                  String? = ""
     var backgroundColor:        String? = ""
-    var style:                  String? = ""
+    var padding:                String? = ""
+
     var fontDesign:             String? = ""
+    var style:                  String? = ""
 
     enum TextModelCodingKeys:   String, CodingKey {
         case text = "of"
@@ -69,7 +71,9 @@ struct CVText: View {
         
         Text("\(model.text)")
             .font(.system(_textStyle, design: _fontDesign))
+            .padded(with: model.padding)
             .colored(with: model.color, backgroundColor: model.backgroundColor)
+
     }
 }
 
@@ -104,6 +108,7 @@ struct TextView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             TextViewDemo()
+                .padding(.bottom)
         }
     }
 }

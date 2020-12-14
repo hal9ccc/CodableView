@@ -30,11 +30,11 @@
                      { "Text": {"text": "largeTitle",                 "style": "largeTitle"    } },
                      { "Text": {"text": "title",                      "style": "title"         } },
                      { "Text": {"text": "headline",                   "style": "headline"      } },
-                     { "Text": {"text": "subheadline",                "style": "subheadline"   } },
-                     { "Text": {"text": "body",                       "style": "body"          } },
-                     { "Text": {"text": "callout",                    "style": "callout"       } },
-                     { "Text": {"text": "footnote",                   "style": "footnote"      } },
-                     { "Text": {"text": "caption",                    "style": "caption"       } },
+                     { "Text": {"text": "subheadline",                "style": "subheadline"   , "padding": "0"} },
+                     { "Text": {"text": "body",                       "style": "body"          , "padding": "0"} },
+                     { "Text": {"text": "callout",                    "style": "callout"       , "padding": "0"} },
+                     { "Text": {"text": "footnote",                   "style": "footnote"      , "padding": "0"} },
+                     { "Text": {"text": "caption",                    "style": "caption"       , "padding": "0"} },
                      { "Text": {"text": "title serif",                "style": "title"         , "fontDesign": "serif"      }},
                      { "Text": {"text": "title rounded",              "style": "title"         , "fontDesign": "rounded"    }},
                      { "Text": {"text": "title monospaced",           "style": "title"         , "fontDesign": "monospaced" }},
@@ -119,9 +119,9 @@
             "title": "Form",
             "Form": {
                 "content": [
-                    { "HStack": { "multilineTextAlignment":"trailing", "content": [ { "Text": { "text":"IP-Adresse"    }}, { "TextField" : { "text":"0.0.0.0",      "value": "",   "style": ""      }} ] } },
-                    { "HStack": { "multilineTextAlignment":"trailing", "content": [ { "Text": { "text":"Teilnetzmaske" }}, { "TextField" : { "text":"255.255.0.0",  "value": "",   "style": ""      }} ] } },
-                    { "HStack": { "multilineTextAlignment":"trailing", "content": [ { "Text": { "text":"Router"        }}, { "TextField" : { "text":"abc",          "value": "",   "style": ""      }} ] } }
+                    { "HStack": { "multilineTextAlignment":"trailing", "content": [ { "Text": { "text":"IP-Adresse"    }}, { "TextField" : { "text":"0.0.0.0",      "value": "",   "style": ""      , "padding":"vertical"}} ] } },
+                    { "HStack": { "multilineTextAlignment":"trailing", "content": [ { "Text": { "text":"Teilnetzmaske" }}, { "TextField" : { "text":"255.255.0.0",  "value": "",   "style": ""      , "padding":"vertical"}} ] } },
+                    { "HStack": { "multilineTextAlignment":"trailing", "content": [ { "Text": { "text":"Router"        }}, { "TextField" : { "text":"abc",          "value": "",   "style": ""      , "padding":"vertical"}} ] } }
                 ]
             }
         }

@@ -18,7 +18,7 @@ class CVRootViewModel: ObservableObject, Identifiable {
 
     func load(element: CVElement, async: Bool = true) {
         
-        print("\(String(describing: id)) loading \(element)")
+        //print("\(String(describing: id)) loading \(element)")
         
         let element_with_guaranteed_ids = element.withGuaranteedId(baseId: id!)
         

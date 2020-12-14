@@ -75,7 +75,7 @@ struct CVElement: Identifiable, Decodable {
         
         if (f.id ?? "").isEmpty {
             f.id = baseId + "." + modelType + (idx >= 0 ? "-\(idx)" : "")
-            print("generated id:" + f.id!)
+            //print("generated id:" + f.id!)
         }
         
         if f.List       != nil { f.List!    .content = f.List!      .contentWithGuaranteedId(baseId: f.id ?? "") }
@@ -93,8 +93,8 @@ struct CVElement: Identifiable, Decodable {
     // TODO: find indirect way to return the corrosponding view
     func render() -> AnyView {
 
-        let data: viewable? = model()
-        print ("Model: \(String(describing: model()))");
+        let data: viewable = model()
+        //print ("Model: \(String(describing: model()))");
         
         if Error            != nil { return CVError            (model: Error!            ).toAnyView() }
         if Text             != nil { return CVText             (model: Text!             ).toAnyView() }
@@ -123,12 +123,6 @@ struct CVElement: Identifiable, Decodable {
         else if List        != nil && List!.style      == "sidebar"        { return CVSidebarList                (model: List!             ).toAnyView() }
         else if List        != nil                                         { return CVDefaultList                (model: List!             ).toAnyView() }
         
-
-
-        if model() == nil {
-            return SwiftUI.Text("this element contains no data").toAnyView()
-        }
-        
         return SwiftUI.Text("no view for \( String(describing: data))").toAnyView()
     }
     
@@ -139,19 +133,15 @@ struct CVElement: Identifiable, Decodable {
 //        var v: viewable?
         
         for child in mirror.children {
-//            if child.value.
-//            if child.value != nil {
-//                print("child.label:    "+String(describing: child.label))
-//                print("child.value:    "+String(describing: child.value))
-//            }
-//            print("child:    "+String(describing: child))
-            
-            if let f = child.value as? CVZStackModel  { return f }
-            if let f = child.value as? CVHStackModel  { return f }
-            if let f = child.value as? CVVStackModel  { return f }
-            if let f = child.value as? CVFormModel    { return f }
-            if let f = child.value as? CVListModel    { return f }
-            if let f = child.value as? CVSectionModel { return f }
+            if let f = child.value as? CVTextModel              { return f }
+            if let f = child.value as? CVLabelModel             { return f }
+            if let f = child.value as? CVNavigationLinkModel    { return f }
+            if let f = child.value as? CVZStackModel            { return f }
+            if let f = child.value as? CVHStackModel            { return f }
+            if let f = child.value as? CVVStackModel            { return f }
+            if let f = child.value as? CVFormModel              { return f }
+            if let f = child.value as? CVListModel              { return f }
+            if let f = child.value as? CVSectionModel           { return f }
         }
         
         return CVTextModel(from: "no data")

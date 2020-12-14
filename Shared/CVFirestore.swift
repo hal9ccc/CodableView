@@ -94,8 +94,7 @@ class CVFirestore: ObservableObject {
         }
 
         vm?.load(element: element)
-        
-        print("loaded \(String(describing: vm))")
+
     }
 
 

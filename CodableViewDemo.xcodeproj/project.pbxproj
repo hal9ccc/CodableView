@@ -78,6 +78,10 @@
 		4E81DDA82574D84D007DC026 /* ZStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E81DDA62574D84D007DC026 /* ZStack.swift */; };
 		4E81DDAC25759DD7007DC026 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E81DDAB25759DD7007DC026 /* Error.swift */; };
 		4E81DDAD25759DD7007DC026 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E81DDAB25759DD7007DC026 /* Error.swift */; };
+		4EB531C025811C060089112F /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB531BF25811C050089112F /* UIViewController+Extensions.swift */; };
+		4EB531C125811C060089112F /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB531BF25811C050089112F /* UIViewController+Extensions.swift */; };
+		4EB531C5258161B70089112F /* wrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB531C4258161B70089112F /* wrap.swift */; };
+		4EB531C6258161B70089112F /* wrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB531C4258161B70089112F /* wrap.swift */; };
 		4EBC9F3B2571B272008716EA /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC9F3A2571B272008716EA /* Label.swift */; };
 		4EBC9F3C2571B272008716EA /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC9F3A2571B272008716EA /* Label.swift */; };
 		4EBC9F432571B68D008716EA /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 4EBC9F422571B68D008716EA /* SFSafeSymbols */; };
@@ -140,6 +144,8 @@
 		4E81DD8325746EEF007DC026 /* renderContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = renderContent.swift; sourceTree = "<group>"; };
 		4E81DDA62574D84D007DC026 /* ZStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZStack.swift; sourceTree = "<group>"; };
 		4E81DDAB25759DD7007DC026 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		4EB531BF25811C050089112F /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		4EB531C4258161B70089112F /* wrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wrap.swift; sourceTree = "<group>"; };
 		4EBC9F3A2571B272008716EA /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		4EBC9F462571BEA1008716EA /* VStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VStack.swift; sourceTree = "<group>"; };
 		4EBC9F4B2571C3D9008716EA /* views.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = views.json; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 				4E1D99BC25714AEF00026C73 /* buildFrom.swift */,
 				4E81DD8325746EEF007DC026 /* renderContent.swift */,
 				4EEA462D257C3C1000257B20 /* ViewModifiers.swift */,
+				4EB531C4258161B70089112F /* wrap.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -197,6 +204,7 @@
 				4E3ACD522568488A00767BA6 /* String+Extensions.swift */,
 				4E3ACD532568488A00767BA6 /* View+Extensions.swift */,
 				4E3ACD542568488A00767BA6 /* Dictionary+Extensions.swift */,
+				4EB531BF25811C050089112F /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -542,9 +550,11 @@
 				4E3ACD9C256848BF00767BA6 /* Chart.swift in Sources */,
 				4E3ACD652568489400767BA6 /* CVElement.swift in Sources */,
 				4E3ACD692568489400767BA6 /* Row.swift in Sources */,
+				4EB531C025811C060089112F /* UIViewController+Extensions.swift in Sources */,
 				4E1D99B6256F020B00026C73 /* List.swift in Sources */,
 				4E81DD8425746EEF007DC026 /* renderContent.swift in Sources */,
 				4E3ACD552568488A00767BA6 /* String+Extensions.swift in Sources */,
+				4EB531C5258161B70089112F /* wrap.swift in Sources */,
 				4E3ACDA2256848BF00767BA6 /* Text.swift in Sources */,
 				4E81DDAC25759DD7007DC026 /* Error.swift in Sources */,
 				4E046A2225766DBA00E4CDD1 /* NavigationLink.swift in Sources */,
@@ -588,9 +598,11 @@
 				4E3ACD9D256848BF00767BA6 /* Chart.swift in Sources */,
 				4E3ACD662568489400767BA6 /* CVElement.swift in Sources */,
 				4E3ACD6A2568489400767BA6 /* Row.swift in Sources */,
+				4EB531C125811C060089112F /* UIViewController+Extensions.swift in Sources */,
 				4E1D99B7256F020B00026C73 /* List.swift in Sources */,
 				4E81DD8525746EEF007DC026 /* renderContent.swift in Sources */,
 				4E3ACD562568488A00767BA6 /* String+Extensions.swift in Sources */,
+				4EB531C6258161B70089112F /* wrap.swift in Sources */,
 				4E3ACDA3256848BF00767BA6 /* Text.swift in Sources */,
 				4E81DDAD25759DD7007DC026 /* Error.swift in Sources */,
 				4E046A2325766DBA00E4CDD1 /* NavigationLink.swift in Sources */,

@@ -11,6 +11,11 @@ struct CVTextFieldModel: Decodable {
     let value: String?
     let style: String?
     let disabled: String?
+
+    var color:                  String? = ""
+    var backgroundColor:        String? = ""
+    var padding:                String? = ""
+
 }
 
 
@@ -28,7 +33,9 @@ struct CVTextField: View {
 //            .padding(.leading)
 //            .font(.system(size: 20))
             .onAppear(perform: { entry = model.value ?? "" })
-        
+            .padded(with: model.padding)
+            .colored(with: model.color, backgroundColor: model.backgroundColor)
+
     }
 }
 
