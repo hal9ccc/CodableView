@@ -15,6 +15,10 @@
 		4E1D99B7256F020B00026C73 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D99B5256F020B00026C73 /* List.swift */; };
 		4E1D99BD25714AEF00026C73 /* buildFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D99BC25714AEF00026C73 /* buildFrom.swift */; };
 		4E1D99BE25714AEF00026C73 /* buildFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D99BC25714AEF00026C73 /* buildFrom.swift */; };
+		4E25BEC62589672300B633A2 /* TypingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E25BEC52589672300B633A2 /* TypingView.swift */; };
+		4E25BEC72589672300B633A2 /* TypingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E25BEC52589672300B633A2 /* TypingView.swift */; };
+		4E25BECD258A102200B633A2 /* RootNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E25BECC258A102100B633A2 /* RootNavigationView.swift */; };
+		4E25BECE258A102200B633A2 /* RootNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E25BECC258A102100B633A2 /* RootNavigationView.swift */; };
 		4E3ACD4B2568487E00767BA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD492568487E00767BA6 /* Constants.swift */; };
 		4E3ACD4C2568487E00767BA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD492568487E00767BA6 /* Constants.swift */; };
 		4E3ACD4D2568487E00767BA6 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD4A2568487E00767BA6 /* ImageDownloader.swift */; };
@@ -35,8 +39,6 @@
 		4E3ACD6C2568489400767BA6 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD622568489400767BA6 /* Actions.swift */; };
 		4E3ACD77256848B300767BA6 /* StaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD70256848B300767BA6 /* StaticView.swift */; };
 		4E3ACD78256848B300767BA6 /* StaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD70256848B300767BA6 /* StaticView.swift */; };
-		4E3ACD7B256848B300767BA6 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD72256848B300767BA6 /* DebugView.swift */; };
-		4E3ACD7C256848B300767BA6 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD72256848B300767BA6 /* DebugView.swift */; };
 		4E3ACD7D256848B300767BA6 /* CVRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD73256848B300767BA6 /* CVRootView.swift */; };
 		4E3ACD7E256848B300767BA6 /* CVRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD73256848B300767BA6 /* CVRootView.swift */; };
 		4E3ACD81256848B300767BA6 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACD75256848B300767BA6 /* URLImage.swift */; };
@@ -107,6 +109,8 @@
 		4E046A262577C4FD00E4CDD1 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		4E1D99B5256F020B00026C73 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		4E1D99BC25714AEF00026C73 /* buildFrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buildFrom.swift; sourceTree = "<group>"; };
+		4E25BEC52589672300B633A2 /* TypingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingView.swift; sourceTree = "<group>"; };
+		4E25BECC258A102100B633A2 /* RootNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationView.swift; sourceTree = "<group>"; };
 		4E3ACD492568487E00767BA6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4E3ACD4A2568487E00767BA6 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		4E3ACD522568488A00767BA6 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -117,7 +121,6 @@
 		4E3ACD612568489400767BA6 /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		4E3ACD622568489400767BA6 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		4E3ACD70256848B300767BA6 /* StaticView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticView.swift; sourceTree = "<group>"; };
-		4E3ACD72256848B300767BA6 /* DebugView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		4E3ACD73256848B300767BA6 /* CVRootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVRootView.swift; sourceTree = "<group>"; };
 		4E3ACD75256848B300767BA6 /* URLImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		4E3ACD89256848BA00767BA6 /* CVFirestore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVFirestore.swift; sourceTree = "<group>"; };
@@ -225,9 +228,10 @@
 			children = (
 				4E3ACD73256848B300767BA6 /* CVRootView.swift */,
 				4E3ACD70256848B300767BA6 /* StaticView.swift */,
-				4E3ACD72256848B300767BA6 /* DebugView.swift */,
 				4E3ACD75256848B300767BA6 /* URLImage.swift */,
 				4EEA463E257D4A4900257B20 /* ImagePicker.swift */,
+				4E25BEC52589672300B633A2 /* TypingView.swift */,
+				4E25BECC258A102100B633A2 /* RootNavigationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -554,6 +558,7 @@
 				4E1D99B6256F020B00026C73 /* List.swift in Sources */,
 				4E81DD8425746EEF007DC026 /* renderContent.swift in Sources */,
 				4E3ACD552568488A00767BA6 /* String+Extensions.swift in Sources */,
+				4E25BEC62589672300B633A2 /* TypingView.swift in Sources */,
 				4EB531C5258161B70089112F /* wrap.swift in Sources */,
 				4E3ACDA2256848BF00767BA6 /* Text.swift in Sources */,
 				4E81DDAC25759DD7007DC026 /* Error.swift in Sources */,
@@ -569,7 +574,6 @@
 				4E6E76E725681FD1009F9892 /* Persistence.swift in Sources */,
 				4E6E76E125681FD1009F9892 /* CodableViewDemo.xcdatamodeld in Sources */,
 				4E3ACD4D2568487E00767BA6 /* ImageDownloader.swift in Sources */,
-				4E3ACD7B256848B300767BA6 /* DebugView.swift in Sources */,
 				4E3ACD572568488A00767BA6 /* View+Extensions.swift in Sources */,
 				4EBC9F472571BEA1008716EA /* VStack.swift in Sources */,
 				4E6E76E525681FD1009F9892 /* ContentView.swift in Sources */,
@@ -577,6 +581,7 @@
 				4E3ACD8E256848BA00767BA6 /* CVFirestore.swift in Sources */,
 				4E3ACD672568489400767BA6 /* Screen.swift in Sources */,
 				4E3ACD6B2568489400767BA6 /* Actions.swift in Sources */,
+				4E25BECD258A102200B633A2 /* RootNavigationView.swift in Sources */,
 				4E3ACD81256848B300767BA6 /* URLImage.swift in Sources */,
 				4E046A272577C4FD00E4CDD1 /* Form.swift in Sources */,
 			);
@@ -602,6 +607,7 @@
 				4E1D99B7256F020B00026C73 /* List.swift in Sources */,
 				4E81DD8525746EEF007DC026 /* renderContent.swift in Sources */,
 				4E3ACD562568488A00767BA6 /* String+Extensions.swift in Sources */,
+				4E25BEC72589672300B633A2 /* TypingView.swift in Sources */,
 				4EB531C6258161B70089112F /* wrap.swift in Sources */,
 				4E3ACDA3256848BF00767BA6 /* Text.swift in Sources */,
 				4E81DDAD25759DD7007DC026 /* Error.swift in Sources */,
@@ -617,7 +623,6 @@
 				4E6E76E825681FD1009F9892 /* Persistence.swift in Sources */,
 				4E6E76E225681FD1009F9892 /* CodableViewDemo.xcdatamodeld in Sources */,
 				4E3ACD4E2568487E00767BA6 /* ImageDownloader.swift in Sources */,
-				4E3ACD7C256848B300767BA6 /* DebugView.swift in Sources */,
 				4E3ACD582568488A00767BA6 /* View+Extensions.swift in Sources */,
 				4EBC9F482571BEA1008716EA /* VStack.swift in Sources */,
 				4E6E76E625681FD1009F9892 /* ContentView.swift in Sources */,
@@ -625,6 +630,7 @@
 				4E3ACD8F256848BA00767BA6 /* CVFirestore.swift in Sources */,
 				4E3ACD682568489400767BA6 /* Screen.swift in Sources */,
 				4E3ACD6C2568489400767BA6 /* Actions.swift in Sources */,
+				4E25BECE258A102200B633A2 /* RootNavigationView.swift in Sources */,
 				4E3ACD82256848B300767BA6 /* URLImage.swift in Sources */,
 				4E046A282577C4FD00E4CDD1 /* Form.swift in Sources */,
 			);

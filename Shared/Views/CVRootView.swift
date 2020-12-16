@@ -24,6 +24,8 @@ struct CVRootView: View {
         
         let title = vm.element?.title ?? vm.element?.id ?? ""
         
+        let _: () = print("CVRootView VM: \(vm.element)")
+        
         Group {
             if vm.element == nil {
                 ProgressView()
